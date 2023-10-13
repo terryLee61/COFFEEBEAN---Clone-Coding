@@ -1,0 +1,311 @@
+/* footer 타이틀 폰트 */
+
+@font-face {
+    font-family: "Archer-Semibold";
+    src: url("https://db.onlinewebfonts.com/t/4c549f58ac7bed64fa40dbe9b3ca6ed4.eot");
+    src: url("https://db.onlinewebfonts.com/t/4c549f58ac7bed64fa40dbe9b3ca6ed4.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/4c549f58ac7bed64fa40dbe9b3ca6ed4.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/4c549f58ac7bed64fa40dbe9b3ca6ed4.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/4c549f58ac7bed64fa40dbe9b3ca6ed4.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/4c549f58ac7bed64fa40dbe9b3ca6ed4.svg#Archer-Semibold")format("svg");
+}
+
+/* footer 본문 폰트 */
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+
+/* header, footer{
+    display: flex;
+    justify-content: center;    
+} */
+
+body{
+    font-size: 13px;
+}
+
+header{
+    position: fixed;
+    background: white;
+}
+
+/* section{
+    height: 1000px;
+    padding: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+#main_btn{
+    color: black;
+}
+
+.main_msg{
+    font-size: 1.5rem;
+}
+
+header{
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+/*     display: flex;
+    justify-content: space-around; */
+}
+
+a{
+    /* color: black; */
+    color: rgb(75,38,22);
+    font-size: 13px;
+}
+
+a:hover{
+    color: blueviolet;
+}
+
+/* .h_mbr_no, ul{
+	display: flex;
+} */
+
+.h_mbr_no{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -615px;
+    /* - 를 붙이면, 개체를 왼쪽으로 잡아당길 수 있다.*/
+    width: 1230px;
+}
+
+.h_mbr_no_txt{
+    float: left;
+    padding-top: 46px;
+    font-size: 20px;
+    font-family:'NanumBarunGothic';
+    line-height: 28px;
+    color: white;
+}
+
+.h_mbr_no .btn_box{
+    float: right;  
+    padding-top: 44px;
+}
+
+.h_mbr_no .btn_box a{
+	float: left;
+    width: 170px;
+    height: 35px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 33px;
+    box-sizing: border-box;
+}
+
+.h_mbr_no .btn1 {
+    color: rgb(47,28,17);
+    background: rgb(255,255,255);
+}
+
+.h_mbr_no .btn2 {
+    color: rgb(255,255,255);
+    border: 1px solid rgb(255,255,255);
+    margin-left: 40px;
+}
+
+.pcolor4{
+    color: rgb(255,175,36);
+}
+
+.header_member {
+    display: none;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    background: rgb(47,28,17);
+}
+
+.inner_util{
+    height: 40px;
+}
+
+.inner_header{
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+.logo {
+    width: 93px;
+    height: 100px;
+    float: left;
+    text-indent: -9999px;
+    background: url(../img/logo_index.png) no-repeat 0 center;
+}
+
+.logo a{
+    display: block;
+    height: inherit;
+}
+
+#btnSearch{
+    float: right; 
+    /* 부모에 flex를 걸면 유효하지 않다 */
+}
+
+#btnSearch button {
+    width: 20px;
+    height: 100px;
+    display: block;
+    padding: 0;
+    text-indent: -9999px;
+    background: url(../img/logo_search.png) no-repeat center center;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+}
+
+.gnb{
+    float: left;
+    width: 75%;
+    margin-left: 99px;
+}
+
+.gnb > ul > li > a {
+    display: block;
+    font-family: Arial, 'NanumBarunGothic';
+    font-weight: 700;
+    font-size: 14px;
+    color: rgb(47,28,17);
+    line-height: 100px;
+    letter-spacing: 0.025em; /* 자간 */
+}
+
+#gnb ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.is_open_member .header_member {
+    display: block;
+    height: 120px;
+    animation: openMember 0.3s ease-in-out;
+}
+
+
+.util_menu{
+	background:rgb(238,238,238);
+}
+
+.util_menu .inner_util ul li:first-child a {
+    padding-right: 20px;
+    border-right: 1px solid rgb(228,228,228);
+}
+
+.util_menu .inner_util ul li a {
+    display: block;
+    margin-right: 20px;
+    font-family: 'NanumBarunGothic';
+    font-size: 14px;
+    color: rgb(51,51,51);
+    line-height: 40px;
+}
+
+.util_menu .inner_util{
+    width: 1260px;
+    margin: 0 auto;
+}
+
+.util_menu .inner_util ul{
+    float: right;
+}
+
+.inner_util ul li{
+    float: left;
+}
+
+#btnHeaderMember a{
+    display: block; /* 필요 */
+    width: 60px;
+    height: 40px;
+    text-indent: -9999px;
+    background: rgb(47,28,17) url(../img/user_info.png) no-repeat 50% 50%;
+}
+
+/* header 끝 */
+
+/* footer */
+
+.sitemap{
+    overflow: hidden; /* 높이를 조절하지 않고 overflow로 높이 조정 */
+    /* height: 300px; 조정 */
+    padding: 55px 0 50px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(75,38,22);
+}
+
+.sitemap div ul li a, .txt_box .link a, .address span{
+    font-family: 'NanumBarunGothic';
+}
+
+.txt_box .link a{
+    display: inline-block;
+    font-size: 13px;
+    margin: 0 5px;
+    color: rgb(95,77,63);
+}
+
+.sitemap h2{
+    margin-bottom: 10px;
+    font-family: 'Archer-Semibold';
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(207,102,26);
+}
+
+.sitemap div{
+    overflow: hidden;
+}
+
+.sitemap div div{
+    float: left;
+}
+
+.sitemap ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.sitemap ul li{
+    margin-top: 10px;
+}
+
+.inner_footer{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 20px;
+}
+
+.footer{
+    background: rgb(226,226,226);
+}
+
+.txt_box .link{
+    margin-bottom: 15px;
+    /* line-height: 25px; */
+    color: rgb(95,77,63);
+}
+
+.txt_box .address{
+    color: rgb(95,77,63);
+    line-height: 24px;
+}
