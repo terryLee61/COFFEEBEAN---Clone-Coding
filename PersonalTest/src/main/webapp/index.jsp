@@ -14,9 +14,7 @@
 <link rel="stylesheet" href="resources/style/grid.css">
 </head>
 <body>
-
-
-	<section>
+	<section id="index">
 		<p class="title">
 			<a href="main" id="main_btn">
 				<h1>nEW sTART</h1>

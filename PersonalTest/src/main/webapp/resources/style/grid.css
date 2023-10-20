@@ -34,13 +34,13 @@ header{
     background: white;
 }
 
-/* section{
+#index{
     height: 1000px;
     padding: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
-} */
+}
 
 #main_btn{
     color: black;
@@ -50,7 +50,21 @@ header{
     font-size: 1.5rem;
 }
 
+.main_wrap{
+    margin: 55px auto 0;
+}
+
+.main_title{
+    margin-bottom: 35px;
+    font-family: 'Archer-Semibold', 'NanumBarunGothic';
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(207, 102, 26);
+    text-align: center;
+}
+
 header{
+    height: 141px;
     width: 100%;
     left: 0;
     top: 0;
@@ -78,7 +92,7 @@ a:hover{
     top: 0;
     left: 50%;
     margin-left: -615px;
-    /* - 를 붙이면, 개체를 왼쪽으로 잡아당길 수 있다.*/
+    /* - 를 붙이면, 객체를 왼쪽으로 잡아당길 수 있다.*/
     width: 1230px;
 }
 
@@ -269,7 +283,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     display: block; /* 필요 */
     width: 60px;
     height: 40px;
-    text-indent: -9999px;
+    /* text-indent: -9999px; */
+    text-indent: 100%;    
+    white-space: nowrap;    
+    overflow: hidden;
+
     background: rgb(47,28,17) url(../img/user_info.png) no-repeat 50% 50%;
 }
 
