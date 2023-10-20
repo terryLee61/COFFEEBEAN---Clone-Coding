@@ -16,6 +16,7 @@
 
  <!-- Owl Stylesheets -->
  <link rel="stylesheet" href="resources/style/owl.carousel.min.css">
+ <!-- 슬라이드 하단 dot -->
  <link rel="stylesheet" href="resources/style/owl.theme.default.min.css">
 
     <!-- javascript -->
@@ -87,13 +88,17 @@
 									  $(document).ready(function() {
 										var owl = $('.owl-carousel');
 										owl.owlCarousel({
-										  items: 4,
+										  items: 3,
+										//   표현하고자 하는 슬라이드 개수
 										  loop: true,
 										  margin: 10,
 										  autoplay: true,
-										  autoplayTimeout: 3000,
-										//   넘어가는 속도 조정, 1000 = 1초를 의미한다.
-										  autoplayHoverPause: true
+										  autoplayTimeout: 7000,
+										  //   넘어가는 속도 조정, 1000 = 1초를 의미한다.
+										  slideBy: 3,
+										  autoplaySpeed: 1500 // 넘어가는 속력 조절
+										//   3개씩 넘기게 한다.
+										//   autoplayHoverPause: true
 										});
 										$('.play').on('click', function() {
 										  owl.trigger('play.owl.autoplay', [1000])
