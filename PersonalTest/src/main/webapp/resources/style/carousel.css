@@ -1,0 +1,28 @@
+/* 슬라이드 컨테이너 스타일 */
+.slide_box {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 슬라이드 스타일 */
+/* .slide_container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+} */
+
+/* .slide_con {
+    flex: 0 0 100%;
+    display: none;
+} */
+
+/* 이미지 스타일 */
+.slide_con img {
+    width: 100%;
+    height: auto;
+}

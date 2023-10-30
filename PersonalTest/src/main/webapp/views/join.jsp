@@ -16,7 +16,7 @@
 	<jsp:include page="header_form"></jsp:include>
     <!-- header 끝 -->
     
-    <section>   
+    <section id="wrap">
         <!-- 회원가입 폼 -->
         <div class="form_wrap">
             <form action="Join" method="post" id="form">

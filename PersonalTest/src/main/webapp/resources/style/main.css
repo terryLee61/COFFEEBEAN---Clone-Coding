@@ -1,10 +1,6 @@
-#wrap{
-    margin-top: 140px;
-}
-
 .con1 img{
     width: 100%;
-    height: 700px;
+    height: 600px;
 }
 
 .insta_area{
@@ -14,3 +10,63 @@
 /* .owl-stage div{
     width: 30%;
 } */
+
+.slide_container{
+    height: 400px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.slide_container li{
+    width: 380px;
+    height: 350px;
+    display: inline-block;
+}
+
+.slide_container img{
+    width: inherit;
+    height: inherit;
+}
+
+.product_slide{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.txt_box span{
+    display: block;
+}
+
+.photo{
+    margin-bottom: 30px;
+}
+
+.photo img{
+    width: 280px;
+}
+
+.product_slide{
+    margin-bottom: 30px;
+}
+
+.product_slide .txt_box{
+    text-align: center;
+}
+
+.name{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.date{
+    font-size: 0.9rem;
+}
+
+.ori_price{
+    text-decoration: line-through;
+}
+
+.ori_price, .fixed_price{
+    font-size: 0.7rem;
+}
+

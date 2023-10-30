@@ -14,7 +14,7 @@
    <jsp:include page="header"></jsp:include>
     <!-- header 끝 -->
     <!-- body 시작 -->
-    <section>
+    <section id="wrap">
         <div class="main_wrap">
             <div>
                SERVICE & STORE

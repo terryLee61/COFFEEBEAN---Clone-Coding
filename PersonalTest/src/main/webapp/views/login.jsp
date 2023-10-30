@@ -13,7 +13,7 @@
 	<jsp:include page="header_form"></jsp:include>
 	<!-- header 끝 -->
 	
-	<section>
+    <section id="wrap">
 		<div class="form_wrap">
             <form action="Login" method="post" id="form">
             	<span>로그인</span>

@@ -74,6 +74,10 @@ header{
     justify-content: space-around; */
 }
 
+#wrap{
+    margin-top: 140px;
+}
+
 a{
     /* color: black; */
     color: rgb(75,38,22);
