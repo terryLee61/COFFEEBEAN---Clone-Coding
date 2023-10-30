@@ -54,8 +54,8 @@
 							<p class="txt_box">
 								<span class="name">제품설명1</span>
 								<span class="date">유통기한: </span>
-								<span class="ori_price">제품가격1</span>
-								<span class="fixed_price">제품가격2</span>
+								<span class="ori_price">15,000원</span>
+								<span class="fixed_price">12,000원</span>
 							</p>
 						</a>
 					</div>
@@ -69,8 +69,8 @@
 							<p class="txt_box">
 								<span class="name">제품설명1</span>
 								<span class="date">유통기한: </span>
-								<span class="ori_price">제품가격1</span>
-								<span class="fixed_price">제품가격2</span>
+								<span class="ori_price">12,000원</span>
+								<span class="fixed_price">9,000원</span>
 							</p>
 						</a>
 					</div>
@@ -84,8 +84,8 @@
 							<p class="txt_box">
 								<span class="name">제품설명1</span>
 								<span class="date">유통기한: </span>
-								<span class="ori_price">제품가격1</span>
-								<span class="fixed_price">제품가격2</span>
+								<span class="ori_price">18,000원</span>
+								<span class="fixed_price">15,000원</span>
 							</p>
 						</a>
 					</div>
@@ -99,8 +99,8 @@
 							<p class="txt_box">
 								<span class="name">제품설명1</span>
 								<span class="date">유통기한: </span>
-								<span class="ori_price">제품가격1</span>
-								<span class="fixed_price">제품가격2</span>
+								<span class="ori_price">21,000원</span>
+								<span class="fixed_price">18,000원</span>
 							</p>
 						</a>
 					</div>

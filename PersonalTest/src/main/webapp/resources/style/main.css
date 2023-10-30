@@ -18,9 +18,10 @@
 }
 
 .slide_container li{
-    width: 380px;
+    width: 300px;
     height: 350px;
     display: inline-block;
+    margin: 0 15px;
 }
 
 .slide_container img{
@@ -70,3 +71,6 @@
     font-size: 0.7rem;
 }
 
+.silde_con{
+    display: none;
+}
