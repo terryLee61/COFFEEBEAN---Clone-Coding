@@ -86,3 +86,17 @@
     background: transparent;
     /* background: url(../img/play.png); */
 }
+
+.subject{
+    display: block;
+    margin-bottom: 15px;
+    font-family: 'Archer-Semibold', 'NanumBarunGothic';
+    font-size: 18px;
+    color: rgb(207,102,26);
+    line-height: 18px;
+    padding-top: 20px;
+}
+
+.subject_wrap{
+    text-align: center;
+}

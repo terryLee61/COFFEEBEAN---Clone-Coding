@@ -101,15 +101,60 @@
 					<div class="promotion_slide">
 						<div class="slide_box">
 							<div class="autoplay">
-								<div><img src="resources/img/coffee.jpg" alt="">1</div>
-								<div><img src="resources/img/coffee2.jpg" alt="">2</div>
-								<div><img src="resources/img/coffee3.jpg" alt="">3</div>
-								<div><img src="resources/img/coffee.jpg" alt="">4</div>
-								<div><img src="resources/img/coffee2.jpg" alt="">5</div>
-								<div><img src="resources/img/coffee3.jpg" alt="">6</div>
-								<div><img src="resources/img/coffee.jpg" alt="">7</div>
-								<div><img src="resources/img/coffee2.jpg" alt="">8</div>
-								<div><img src="resources/img/coffee3.jpg" alt="">9</div>
+								<div>
+									<img src="resources/img/coffee.jpg" alt="">
+									<p class="subject_wrap">
+										<span class="subject">Spring</span>
+									</p>
+								</div>
+								<div>
+									<img src="resources/img/coffee2.jpg" alt="">
+									<p class="subject_wrap">
+										<span class="subject">Summer</span>
+									</p>
+								</div>
+								<div>
+									<img src="resources/img/coffee3.jpg" alt="">
+									<p class="subject_wrap">
+										<span class="subject">Fall</span>
+									</p>
+								</div>
+								<div>
+									<img src="resources/img/coffee.jpg" alt="">
+									<p class="subject_wrap">
+										<span class="subject">Winter</span>
+									</p>
+								</div>
+								<div>
+									<img src="resources/img/coffee2.jpg" alt="">
+									<p class="subject_wrap">
+										<span class="subject">Spring</span>
+									</p>
+								</div>
+								<div>
+									<img src="resources/img/coffee3.jpg" alt="">
+									<p class="subject_wrap">
+										<span class="subject">Summer</span>
+									</p>
+								</div>
+								<div>
+									<img src="resources/img/coffee.jpg" alt="">
+									<p class="subject_wrap">
+										<span class="subject">Fall</span>
+									</p>
+								</div>
+								<div>
+									<img src="resources/img/coffee2.jpg" alt="">
+									<p class="subject_wrap">
+										<span class="subject">Winter</span>
+									</p>
+								</div>
+								<div>
+									<img src="resources/img/coffee3.jpg" alt="">
+									<p class="subject_wrap">
+										<span class="subject">Spring</span>
+									</p>
+								</div>
 							</div>
 							<span class="control-buttons">
 								<button type="button" class="play">재생</button>
@@ -124,7 +169,8 @@
 								slidesToShow: 3,
 								slidesToScroll: 3,
 								autoplay: true,
-								autoplaySpeed: 2000,
+								autoplaySpeed: 5000, // 자동 재생 간격(텀)
+								speed: 4000, // 전환 속도
 								dots: true
 							});
 
