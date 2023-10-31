@@ -74,3 +74,15 @@
 .slide_con{
     display: none;
 }
+
+.control-buttons{
+    margin-left: 20px;
+    padding-left: 15px;
+    border-left: 1px solid gainsboro;
+}
+
+.control-buttons button{
+    border: none;
+    background: transparent;
+    /* background: url(../img/play.png); */
+}

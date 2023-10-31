@@ -18,6 +18,8 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+
+
 .slick-list
 {
     position: relative;
@@ -37,6 +39,7 @@
     cursor: pointer;
     cursor: hand;
 }
+
 
 .slick-slider .slick-track,
 .slick-slider .slick-list

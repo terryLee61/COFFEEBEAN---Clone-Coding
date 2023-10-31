@@ -111,12 +111,15 @@
 								<div><img src="resources/img/coffee2.jpg" alt="">8</div>
 								<div><img src="resources/img/coffee3.jpg" alt="">9</div>
 							</div>
+							<span class="control-buttons">
+								<button type="button" class="play">재생</button>
+								<button type="button" class="stop">정지</button>
+							</span>
 						</div>
 					</div>
-					
 					<script>
 						$(document).ready(function () {
-							
+
 							$('.autoplay').slick({
 								slidesToShow: 3,
 								slidesToScroll: 3,
@@ -125,6 +128,18 @@
 								dots: true
 							});
 
+
+							// 재생/정지 버튼 컨트롤
+							$('.play').click(function () {
+								$('.autoplay').slick('slickPlay');
+							});
+							$('.stop').click(function () {
+								$('.autoplay').slick('slickPause');
+							});
+
+							// ".control-buttons" 내의 버튼을 ".slick-dots" 클래스 내로 이동
+							var controlButtons = $('.control-buttons');
+							controlButtons.appendTo('.slick-dots');
 						});
 					</script>
 					<div class="insta_area">
