@@ -74,7 +74,7 @@
 			</div> -->
 			<!-- 하단 footer -->
 
-			<div class="txt_box">
+			<div class="footer_txt">
 				<div class="link">
 					<a href="#">홈페이지 이용약관</a> l
 					<a href="#">개인정보처리방침</a> l

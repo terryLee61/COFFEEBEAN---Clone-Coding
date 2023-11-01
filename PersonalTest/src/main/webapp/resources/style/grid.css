@@ -74,6 +74,10 @@ header{
     justify-content: space-around; */
 }
 
+.header{
+    background-color: white;
+}
+
 #wrap{
     margin-top: 140px;
 }
@@ -312,11 +316,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     border-bottom: 1px solid rgb(75,38,22);
 }
 
-.sitemap div ul li a, .txt_box .link a, .address span{
+.sitemap div ul li a, .footer_txt .link a, .address span{
     font-family: 'NanumBarunGothic';
 }
 
-.txt_box .link a{
+.footer_txt .link a{
     display: inline-block;
     font-size: 13px;
     margin: 0 5px;
@@ -358,13 +362,13 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background: rgb(226,226,226);
 }
 
-.txt_box .link{
+.footer_txt .link{
     margin-bottom: 15px;
     /* line-height: 25px; */
     color: rgb(95,77,63);
 }
 
-.txt_box .address{
+.footer_txt .address{
     color: rgb(95,77,63);
     line-height: 24px;
 }

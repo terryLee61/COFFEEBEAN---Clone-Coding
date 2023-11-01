@@ -1,102 +1,193 @@
-.con1 img{
+.con1 img {
     width: 100%;
     height: 600px;
 }
 
-.insta_area{
-    background: rgb(124,81,161);
+.insta_area {
+    margin-left: -400px;
+    padding: 55px 0 40px;
+    text-align: center;
+    background: rgb(124, 81, 161);
+    width: 2000px;
 }
 
 /* .owl-stage div{
     width: 30%;
 } */
 
-.slide_container{
+.slide_container {
     height: 400px;
     text-align: center;
     overflow: hidden;
 }
 
-.slide_container li{
+.slide_container li {
     width: 300px;
     height: 350px;
     display: inline-block;
     margin: 0 15px;
 }
 
-.slide_container img{
+.slide_container img {
     width: inherit;
     height: inherit;
 }
 
-.product_slide{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.txt_box span{
+.txt_box span {
     display: block;
+    margin-bottom: 5px;
 }
 
-.photo{
+.product_list a:hover {
+    color: black;
+}
+
+.photo {
     margin-bottom: 30px;
 }
 
-.photo img{
+.photo img {
     width: 280px;
 }
 
-.product_slide{
+/* .product_slide_wrap{
+    width: 1630px;
+} */
+
+.product_slide {
     margin-bottom: 30px;
 }
 
-.product_slide .txt_box{
+.product_slide .txt_box {
     text-align: center;
 }
 
-.name{
-    font-size: 1.1rem;
+.name {
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
-.date{
-    font-size: 0.9rem;
+.date {
+    margin-top: 10px;
+    font-size: 1rem;
 }
 
-.ori_price{
+.ori_price {
+    margin-top: 5px;
     text-decoration: line-through;
 }
 
-.ori_price, .fixed_price{
-    font-size: 0.7rem;
+.ori_price {
+    font-size: 0.8rem;
 }
 
-.slide_con{
+.fixed_price {
+    font-size: 0.9rem;
+    color: rgb(207, 102, 26);
+}
+
+.ori_price,
+.fixed_price {
+    font-family: 'NanumBarunGothic';
+}
+
+.slide_con {
     display: none;
 }
 
-.control-buttons{
+.control-buttons {
     margin-left: 20px;
     padding-left: 15px;
     border-left: 1px solid gainsboro;
 }
 
-.control-buttons button{
+.control-buttons button {
     border: none;
     background: transparent;
     /* background: url(../img/play.png); */
 }
 
-.subject{
+.subject {
     display: block;
     margin-bottom: 15px;
     font-family: 'Archer-Semibold', 'NanumBarunGothic';
     font-size: 18px;
-    color: rgb(207,102,26);
+    color: rgb(207, 102, 26);
     line-height: 18px;
     padding-top: 20px;
 }
 
-.subject_wrap{
+.subject_wrap {
     text-align: center;
+}
+
+.slide_box a {
+    opacity: 1;
+    transition: opacity 0.5s;
+    /* 0.5초 동안 opacity 속성 변경 애니메이션 적용 */
+}
+
+.slide_box a:hover {
+    opacity: 0.8;
+    /* hover 상태에서 opacity 변경 */
+}
+
+.product_slide {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product_slide .product_list {
+    position: relative;
+    transition: opacity 0.5s;
+}
+
+.product_slide .product_list:hover {
+    opacity: 0.8;
+}
+
+.product_slide .product_list .quickView {
+    position: absolute;
+    display: none;
+    color: white;
+    height: 35px;
+    width: 83px;
+    top: 5px;
+    border-right: none;
+    border-top: none;
+    border-radius: 30px;
+    right: 5px;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+    font-family: 'Archer-Semibold';
+    background: rgb(243, 130, 0);
+}
+
+.product_slide .product_list:hover .quickView {
+    display: block;
+}
+
+/* 하단부 */
+
+.insta_area ul {
+    /* display: flex;
+    justify-content: center; */
+    width: 1200px;
+    margin: 0 auto 30px;
+    overflow: hidden;
+    /* flex-wrap: wrap; */
+}
+
+.insta_area ul li {
+    width: 200px;
+    float: left;
+}
+
+.insta_area ul li a {
+    width: inherit;
+}
+
+.insta_area ul li a img {
+    width: inherit;
+    height: 135px;
 }
