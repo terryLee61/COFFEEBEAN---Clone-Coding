@@ -4,11 +4,9 @@
 }
 
 .insta_area {
-    margin-left: -400px;
     padding: 55px 0 40px;
     text-align: center;
     background: rgb(124, 81, 161);
-    width: 2000px;
 }
 
 /* .owl-stage div{
@@ -209,4 +207,25 @@
 
 .insta_area ul li a img {
     height: 135px;
+}
+
+.insta_area>h2{
+    margin: 0 0 25px;
+    font-size: 24px;
+    font-family: 'Archer-Semibold', 'NanumBarunGothic';
+    font-weight: 400;
+    color: rgb(255,255,255);
+}
+
+.insta_area_btn{
+    display: inline-block;
+    width: 400px;
+    height: 40px;
+    font-size: 14px;
+    font-family: 'Archer-Semibold';
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: rgb(255,255,255);
+    background: rgb(243,130,0);
 }
