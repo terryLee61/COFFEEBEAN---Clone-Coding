@@ -222,6 +222,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     border: none;
 }
 
+#btnSearch.active button{
+    background: url(../img/ico_search_close.png) no-repeat center center;
+}
+
 .gnb{
     float: left;
     width: 75%;
@@ -296,7 +300,6 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     text-indent: 100%;    
     white-space: nowrap;    
     overflow: hidden;
-
     background: rgb(47,28,17) url(../img/user_info.png) no-repeat 50% 50%;
 }
 
@@ -371,4 +374,43 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 .footer_txt .address{
     color: rgb(95,77,63);
     line-height: 24px;
+}
+
+/* 검색창 */
+
+.search_box{
+    display: none;
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    margin-left: -630px;
+    width: 1260px;
+    height: 80px;
+    background: rgb(238,238,238);
+    z-index: 9999;
+}
+
+.search_box .search_input{
+    width: 1160px;
+    height: 30px;
+    margin: 0 auto;
+    line-height: 30px;
+    font-family: 'NanumBarunGothic';
+    font-size: 16px;
+    color: rgb(70,57,50);
+    text-align: center;
+    background: rgb(238,238,238);
+}
+
+.search_box .btn_search{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 30px;
+    display: block;
+    padding: 0;
+    text-indent: -9999px;
+    border: none;
+    background: url(../img/logo_search.png) no-repeat center center;
 }

@@ -6,7 +6,7 @@
 
 		<head>
 			<meta charset="UTF-8">
-			<title>Insert title here</title>
+			<title>커피빈 카피</title>
 			<!-- main css -->
 			<link rel="stylesheet" href="resources/style/main.css">
 

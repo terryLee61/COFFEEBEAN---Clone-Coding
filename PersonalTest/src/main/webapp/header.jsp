@@ -56,6 +56,13 @@
 										</c:otherwise>
 									</c:choose>
 								</li>
+								<c:if test="${not empty sessionScope.log}">
+									<li>
+										<a href="#">
+											마이페이지
+										</a>
+									</li>
+								</c:if>
 								<li>
 									<a href="#">
 										매장찾기
@@ -126,8 +133,54 @@
 								</li>
 							</ul>
 						</div>
-						<div id="btnSearch"><button>검색창 열기</button></div>
+						<!-- 검색창 -->
+						<div id="btnSearch">
+							<button id="openSearchButton">검색창 열기</button>
+						</div>
+						<div class="search_box" id="search_box">
+							<form action="">
+								<fieldset>
+									<legend>검색 폼</legend>
+									<input type="text" class="search_input" name="searchItem" id="searchItem"
+										value="검색어를 입력하세요">
+									<button class="btn_search">
 
+									</button>
+								</fieldset>
+							</form>
+						</div>
+						<script>
+							// 버튼 요소와 검색 박스 요소를 가져옵니다.
+							const openSearchButton = document.getElementById("openSearchButton");
+							const btnSearch = document.getElementById("btnSearch");
+							const searchBox = document.getElementById("search_box");
+
+							// 버튼 상태를 추적하는 변수
+							let isButtonActive = true;
+
+							// 버튼을 클릭할 때 이벤트 리스너를 추가합니다.
+							openSearchButton.addEventListener("click", function () {
+								// isButtonActive 변수를 기반으로 현재 상태를 확인하고 업데이트합니다.
+								if (isButtonActive) {
+									// 버튼에 클래스를 추가하여 활성 상태를 나타냅니다.
+									btnSearch.classList.add("active");
+									// 검색 박스를 보이도록 합니다.
+									// 배경 이미지를 변경합니다.
+									searchBox.style.display = "block";
+									// btnSearch.style.backgroundImage = "url(webapp/resources/img/logo_search.png)";
+								} else {
+									// 버튼의 클래스를 제거하여 비활성 상태를 나타냅니다.
+									btnSearch.classList.remove("active");
+									// 검색 박스를 숨깁니다.
+									searchBox.style.display = "none";
+									// btnSearch.style.backgroundImage = "url(webapp/resources/img/ico_search_close.png)";
+								}
+
+								// 현재 상태를 반대로 업데이트합니다.
+								isButtonActive = !isButtonActive;
+							});
+
+						</script>
 						<!-- top_menu 끝 -->
 					</div>
 				</div>
