@@ -170,24 +170,43 @@
 /* 하단부 */
 
 .insta_area ul {
-    /* display: flex;
-    justify-content: center; */
     width: 1200px;
     margin: 0 auto 30px;
     overflow: hidden;
-    /* flex-wrap: wrap; */
 }
 
 .insta_area ul li {
     width: 200px;
     float: left;
+    overflow: hidden;
+    transition: transform 0.5s, opacity 0.5s; /* transform 및 opacity에 대한 애니메이션 설정 */
 }
 
-.insta_area ul li a {
-    width: inherit;
+.insta_area ul li a:hover{
+    opacity: 0.8;
+    overflow: hidden;
+    display: block;
+}
+
+.insta_area ul li a:hover img{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1); /* 크롬, 사파리 */
+    -moz-transform: scale(1.1); /* 파이어폭스 */
+    -ms-transform: scale(1.1); /* IE */
+    -o-transform: scale(1.1); /* 오페라 */
+    transition: transform 0.5s;
+}
+
+/* 돌아갈때에도 애니메이션으로 돌아가게 */
+.insta_area ul li a img{
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0); /* 크롬, 사파리 */
+    -moz-transform: scale(1.0); /* 파이어폭스 */
+    -ms-transform: scale(1.0); /* IE */
+    -o-transform: scale(1.0); /* 오페라 */
+    transition: transform 0.5s;
 }
 
 .insta_area ul li a img {
-    width: inherit;
     height: 135px;
 }
