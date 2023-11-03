@@ -32,6 +32,8 @@ public class LogoutAction extends HttpServlet {
 		request.getSession().removeAttribute("email");
 		
 		response.sendRedirect("main");
+		
+		System.out.println("로그아웃에 성공했습니다.");
 	}
 
 	/**

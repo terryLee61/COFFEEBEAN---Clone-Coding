@@ -105,6 +105,44 @@
     /* background: url(../img/play.png); */
 }
 
+
+.dynamicDiv{
+    position: fixed;
+    z-index: 99999;
+    left: 0px;
+    top: 0px;
+    width: 1405px;
+    height: 955px;
+    display: block;
+}
+
+
+.overlayDiv{
+    position: fixed;
+    background: rgb(0, 0, 0);
+    opacity: 0.75;
+    z-index: 99999;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/* 추후 반응형 제작 및 변경 필요 */
+
+.overlayDiv2{
+    position: fixed;
+    top: 245px;
+    left: 25%;
+    z-index: 99999;
+}
+
+.overlayDiv3{
+    background: rgb(255,255,255);
+    width: 1000px;
+    height: 600px;
+}
+
 .subject {
     display: block;
     margin-bottom: 15px;

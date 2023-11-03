@@ -52,6 +52,9 @@
 								</p>
 							</a>
 							<button class="quickView">QUICKVIEW</button>
+
+
+
 						</div>
 						<div class="product_list">
 							<!-- 제품사진 -->
@@ -68,6 +71,7 @@
 								</p>
 							</a>
 							<button class="quickView">QUICKVIEW</button>
+
 						</div>
 						<div class="product_list">
 							<!-- 제품사진 -->
@@ -84,6 +88,7 @@
 								</p>
 							</a>
 							<button class="quickView">QUICKVIEW</button>
+
 						</div>
 						<div class="product_list">
 							<!-- 제품사진 -->
@@ -100,8 +105,10 @@
 								</p>
 							</a>
 							<button class="quickView">QUICKVIEW</button>
+
 						</div>
 					</div>
+
 					<!-- </div> -->
 					<h2 class="main_title">What's new</h2>
 					<div class="promotion_slide">
@@ -223,6 +230,29 @@
 					</ul>
 					<a class="insta_area_btn" href="#">OUR INSTAGRAM - @#</a>
 				</div>
+				<script>
+					// QUICKVIEW 버튼 클릭 이벤트 처리
+					$('.quickView').click(function () {
+						// 새로운 div 엘리먼트 생성
+						var newDiv = $('<div class="dynamicDiv">This is a dynamically created div.</div>');
+
+						// 두 번째 div를 생성
+						var overlayDiv = $('<div class="overlayDiv"></div>');
+
+						var overlayDiv2 = $('<div class="overlayDiv2">배경 wrap</div>');
+
+						var overlayDiv3 = $('<div class="overlayDiv3">배경</div>');
+
+
+						// overlayDiv를 newDiv의 자식으로 추가
+						newDiv.append(overlayDiv);
+						newDiv.append(overlayDiv2);
+						overlayDiv2.append(overlayDiv3);
+
+						// newDiv를 body 끝 부분에 추가
+						$('body').append(newDiv);
+					});
+				</script>
 			</section>
 			<!-- footer 시작 -->
 			<jsp:include page="footer"></jsp:include>
