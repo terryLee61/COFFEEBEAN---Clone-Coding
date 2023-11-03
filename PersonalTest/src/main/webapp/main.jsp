@@ -229,20 +229,22 @@
 						<li><a href="#"><img src="resources/img/coffee3.jpg" alt=""></a></li>
 					</ul>
 					<a class="insta_area_btn" href="#">OUR INSTAGRAM - @#</a>
+					<!-- <div class="overlayDiv3">배경
+						<button id="close_pop"></button>
+					</div> -->
 				</div>
 				<script>
 					// QUICKVIEW 버튼 클릭 이벤트 처리
 					$('.quickView').click(function () {
 						// 새로운 div 엘리먼트 생성
-						var newDiv = $('<div class="dynamicDiv">This is a dynamically created div.</div>');
+						var newDiv = $('<div class="dynamicDiv">This is a dynamically created div.</div');
 
 						// 두 번째 div를 생성
-						var overlayDiv = $('<div class="overlayDiv"></div>');
+						var overlayDiv = $('<div class="overlayDiv"></div');
 
-						var overlayDiv2 = $('<div class="overlayDiv2">배경 wrap</div>');
+						var overlayDiv2 = $('<div class="overlayDiv2">배경 wrap</div');
 
-						var overlayDiv3 = $('<div class="overlayDiv3">배경</div>');
-
+						var overlayDiv3 = $('<div class="overlayDiv3">배경<button id="close_pop">Close</button></div>');
 
 						// overlayDiv를 newDiv의 자식으로 추가
 						newDiv.append(overlayDiv);
@@ -251,6 +253,15 @@
 
 						// newDiv를 body 끝 부분에 추가
 						$('body').append(newDiv);
+
+						// close_pop 버튼 클릭 이벤트 처리
+						$('#close_pop').click(function () {
+							// newDiv 및 하위 요소 삭제
+							newDiv.remove();
+
+							// 이벤트 핸들러 해제
+							$('#close_pop').off('click');
+						});
 					});
 				</script>
 			</section>

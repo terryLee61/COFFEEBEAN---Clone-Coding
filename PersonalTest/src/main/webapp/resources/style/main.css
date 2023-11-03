@@ -128,11 +128,17 @@
     height: 100%;
 }
 
+#close_pop{
+    width: 22px;
+    height: 22px;
+    border: none;
+    background: url(../img/ico_search_close.png) no-repeat;
+}
 /* 추후 반응형 제작 및 변경 필요 */
 
 .overlayDiv2{
     position: fixed;
-    top: 245px;
+    top: 165px;
     left: 25%;
     z-index: 99999;
 }
