@@ -1,11 +1,16 @@
 package controller.Search;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import model.Search.Search;
 import model.Search.SearchDao;
@@ -29,27 +34,32 @@ public class SearchAction extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    // URL 매개변수로 전달된 product_name 값을 가져옵니다.
+	    String product_name = request.getParameter("product_name");
 
-		// URL 매개변수로 전달된 product_name 값을 가져옵니다.
-		String product_name = request.getParameter("product_name");
+	    // SearchDao를 사용하여 product_name을 검색하여 제품 정보를 가져옵니다.
+	    SearchDao searchDao = SearchDao.getInstance();
+	    List<Search> search = searchDao.getSearchbyId(product_name);
 
-		// SearchDao를 사용하여 product_name을 검색하여 제품 정보를 가져옵니다.
-		SearchDao searchDao = SearchDao.getInstance();
-		Search search = searchDao.getSearchbyId(product_name);
+	    // 검색 결과를 JSON 형식으로 변환
+	    JSONArray searchArray = new JSONArray();
+	    for (Search result : search) {
+	        JSONObject searchObj = new JSONObject();
+	        searchObj.put("product_idx", result.getProduct_idx());
+	        searchObj.put("product_name", result.getProduct_name());
+	        searchObj.put("product_price", result.getProduct_price());
+	        // 다른 필드도 필요에 따라 추가
 
-		if (search != null) {
-			// 검색된 제품 정보를 request에 저장합니다.
-			request.setAttribute("search", search);
+	        searchArray.put(searchObj);
+	    }
 
-			// 원하는 작업을 수행 (예: JSP 페이지로 이동)
-			request.getRequestDispatcher("search").forward(request, response);
-		} else {
-			// 제품을 찾을 수 없는 경우 처리 (예: 에러 메시지 표시)
-			response.getWriter().println("제품을 찾을 수 없습니다.");
-		}
+	    // JSON 응답을 설정하고 반환
+	    response.setContentType("application/json");
+	    response.setCharacterEncoding("UTF-8");
+	    response.getWriter().write(searchArray.toString());
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
