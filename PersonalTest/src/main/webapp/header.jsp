@@ -16,6 +16,36 @@
 			<!-- jquery -->
 			<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
+			<style>
+				.modal {
+					display: none;
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: rgba(0, 0, 0, 0.7);
+					z-index: 1;
+				}
+
+				.modal-content {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					background-color: #fff;
+					padding: 20px;
+					border: 1px solid #ddd;
+					box-shadow: 2px 2px 6px #aaa;
+				}
+
+				.close {
+					position: absolute;
+					top: 10px;
+					right: 10px;
+					cursor: pointer;
+				}
+			</style>
 		</head>
 
 		<body>
@@ -138,18 +168,42 @@
 							<button id="openSearchButton">검색창 열기</button>
 						</div>
 						<div class="search_box" id="search_box">
-							<form action="">
+							<form action="SearchAction" method="get" enctype="multipart/form-data">
 								<fieldset>
 									<legend>검색 폼</legend>
 									<input type="text" class="search_input" name="searchItem" id="searchItem"
-										value="검색어를 입력하세요">
-									<button class="btn_search">
-
-									</button>
+										placeholder="검색어를 입력하세요">
+									<button class="btn_search" id="searchButton">검색</button>
 								</fieldset>
 							</form>
 						</div>
+
+						<!-- 모달 팝업 -->
+						<div id="searchResultModal" class="modal">
+							<div class="modal-content">
+								<span class="close" id="closeModal">&times;</span>
+								<h2>검색 결과</h2>
+								<div id="searchResult">
+									<!-- 검색 결과를 표시할 곳 -->
+								</div>
+							</div>
+						</div>
+
 						<script>
+							const searchButton = document.getElementById("searchButton");
+
+							// 검색 버튼 클릭 시 서버로 검색어를 요청
+							searchButton.addEventListener("click", (event) => {
+								event.preventDefault(); // 폼 제출 방지
+
+								// 검색어 가져오기
+								const searchItem = document.getElementById("searchItem").value;
+
+								// 검색어를 서버로 전송하고 search.jsp로 이동
+								window.location.href = "SearchAction?product_name=" + encodeURIComponent(searchItem);
+							});
+
+
 							// 버튼 요소와 검색 박스 요소를 가져옵니다.
 							const openSearchButton = document.getElementById("openSearchButton");
 							const btnSearch = document.getElementById("btnSearch");
@@ -179,8 +233,8 @@
 								// 현재 상태를 반대로 업데이트합니다.
 								isButtonActive = !isButtonActive;
 							});
-
 						</script>
+
 						<!-- top_menu 끝 -->
 					</div>
 				</div>

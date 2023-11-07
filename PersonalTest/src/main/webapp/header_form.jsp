@@ -1,25 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+		<!DOCTYPE html>
+		<html>
 
-<!-- 초기화 css -->
-<link rel="stylesheet" href="resources/style/reset.css">
+		<head>
+			<meta charset="UTF-8">
+			<title>Insert title here</title>
 
-<!-- 기본 css -->
-<link rel="stylesheet" href="resources/style/grid.css">
+			<!-- 초기화 css -->
+			<link rel="stylesheet" href="resources/style/reset.css">
 
-<link rel="stylesheet" href="resources/style/form.css">
+			<!-- 기본 css -->
+			<link rel="stylesheet" href="resources/style/grid.css">
 
-</head>
-<body>
-   <header>
+			<link rel="stylesheet" href="resources/style/form.css">
+
+		</head>
+
+		<body>
+			<header>
 				<!-- header -->
 				<div class="header">
 
@@ -142,7 +143,7 @@
 								<fieldset>
 									<legend>검색 폼</legend>
 									<input type="text" class="search_input" name="searchItem" id="searchItem"
-										value="검색어를 입력하세요">
+										placeholder="검색어를 입력하세요">
 									<button class="btn_search">
 
 									</button>
@@ -185,6 +186,7 @@
 					</div>
 				</div>
 			</header>
-        			<script src="resources/script/header.js"></script>        
-</body>
-</html>
+			<script src="resources/script/header.js"></script>
+		</body>
+
+		</html>

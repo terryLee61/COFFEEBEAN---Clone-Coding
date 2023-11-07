@@ -132,7 +132,8 @@
     width: 22px;
     height: 22px;
     border: none;
-    background: url(../img/ico_search_close.png) no-repeat;
+    text-indent: -9999px;
+    background: url(../img/ico_search_close.png) no-repeat center center;
 }
 /* 추후 반응형 제작 및 변경 필요 */
 

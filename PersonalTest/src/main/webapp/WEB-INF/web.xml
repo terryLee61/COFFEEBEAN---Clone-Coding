@@ -50,6 +50,19 @@
 		<servlet-name>LogoutAction</servlet-name>
 		<url-pattern>/Logout</url-pattern>
 	</servlet-mapping>
+	
+	
+	<!-- 검색 -->
+	<servlet>
+		<servlet-name>SearchAction</servlet-name>
+		<servlet-class>controller.Search.SearchAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchAction</servlet-name>
+		<url-pattern>/SearchAction</url-pattern>
+	</servlet-mapping>
+	
 	<!-- servlet-name은 위 아래 동일해야한다. -->
 
 	<!-- 2. JSP 페이지 맵핑 -->
@@ -184,6 +197,17 @@
 	<servlet-mapping>
 		<servlet-name>online</servlet-name>
 		<url-pattern>/online</url-pattern>
+	</servlet-mapping>
+	
+	<!-- search -->
+	<servlet>
+		<servlet-name>search</servlet-name>
+		<jsp-file>/views/search.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>search</servlet-name>
+		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 
 	<!-- 닫지 않으면 오류 발생 -->
