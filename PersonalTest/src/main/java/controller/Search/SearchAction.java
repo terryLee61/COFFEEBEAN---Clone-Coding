@@ -3,6 +3,7 @@ package controller.Search;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,6 +43,9 @@ public class SearchAction extends HttpServlet {
 	    SearchDao searchDao = SearchDao.getInstance();
 	    List<Search> search = searchDao.getSearchbyId(product_name);
 
+	    request.setAttribute("search", search);
+
+	    
 	    // 검색 결과를 JSON 형식으로 변환
 	    JSONArray searchArray = new JSONArray();
 	    for (Search result : search) {
@@ -50,25 +54,26 @@ public class SearchAction extends HttpServlet {
 	        searchObj.put("product_name", result.getProduct_name());
 	        searchObj.put("product_price", result.getProduct_price());
 	        // 다른 필드도 필요에 따라 추가
-
+	        
 	        searchArray.put(searchObj);
+	        
+	        System.out.println("product_name: " + product_name);
+	        
 	    }
 
 	    // JSON 응답을 설정하고 반환
 	    response.setContentType("application/json");
 	    response.setCharacterEncoding("UTF-8");
 	    response.getWriter().write(searchArray.toString());
+	    
+	 // JSON 응답을 request 속성으로 저장
+	    request.setAttribute("searchJSON", searchArray.toString());
+
+	    // JSP 페이지로 이동
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("search");
+	    dispatcher.forward(request, response);
+
 	}
 
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
 
 }

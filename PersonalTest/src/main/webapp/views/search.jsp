@@ -26,18 +26,37 @@
 			<div class="product_box product_list">
 				검색 결과
 
-				<c:if test="${not empty search}">
+				<%-- <c:if test="${not empty search}">
 					<p>제품 이름: ${search[0].product_name}</p>
 					<p>제품 가격: ${search[0].product_price}</p>
 					<!-- 다른 제품 정보를 여기에 표시할 수 있습니다 -->
 				</c:if>
 				<c:if test="${empty search}">
 					<p>제품을 찾을 수 없습니다.</p>
-				</c:if>
-			<script>
+				</c:if> --%>
+				<script>
     $(document).ready(function() {
+    	 var searchJSON = '<%= request.getAttribute("searchJSON") %>';
+    	    var searchData = JSON.parse(searchJSON);
+
+    	    if (searchData.length > 0) {
+    	        // 검색 결과가 있는 경우
+    	        var resultHtml = '';
+    	        for (var i = 0; i < searchData.length; i++) {
+    	            resultHtml += '<p>제품 이름: ' + searchData[i].product_name + '</p>';
+    	            resultHtml += '<p>제품 가격: ' + searchData[i].product_price + '</p>';
+    	            // 다른 필드도 필요에 따라 추가
+    	        }
+    	        // 결과를 화면에 추가
+    	        $('.product_list').append(resultHtml);
+    	    } else {
+    	        // 검색 결과가 없는 경우
+    	        $('.product_list').append('<p>제품을 찾을 수 없습니다.</p>');
+    	    }
+    	    var productName = $('#searchInput').val(); // 검색어를 입력하는 input 필드에서 값을 가져옵니다.
+    	    
         $.ajax({
-            url: 'search', // 서블릿 URL을 여기에 입력
+            url: 'SearchAction', // 서블릿 URL을 여기에 입력
             type: 'GET',
             data: { product_name: productName }, // 검색에 사용할 제품 이름
             dataType: 'json',
