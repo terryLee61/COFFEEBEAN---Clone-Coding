@@ -54,13 +54,13 @@
 	
 	<!-- 검색 -->
 	<servlet>
-		<servlet-name>SearchAction</servlet-name>
+		<servlet-name>Search</servlet-name>
 		<servlet-class>controller.Search.SearchAction</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>SearchAction</servlet-name>
-		<url-pattern>/SearchAction</url-pattern>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/Search</url-pattern>
 	</servlet-mapping>
 	
 	<!-- servlet-name은 위 아래 동일해야한다. -->
@@ -200,7 +200,7 @@
 	</servlet-mapping>
 	
 	<!-- search -->
-	<servlet>
+	    <servlet>
 		<servlet-name>search</servlet-name>
 		<jsp-file>/views/search.jsp</jsp-file>
 	</servlet>

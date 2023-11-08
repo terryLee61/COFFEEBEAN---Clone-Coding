@@ -18,11 +18,10 @@
 			<script type="text/javascript" src="resources/script/jquery.min.js"></script>
 			<script type="text/javascript" src="resources/script/slick.min.js"></script>
 
+			
 			<link rel="stylesheet" href="resources/style/slick.css" />
 			<link rel="stylesheet" href="resources/style/slick-theme.css" />
-
-
-
+			
 		</head>
 
 		<body>
@@ -187,7 +186,6 @@
 					</div>
 					<script>
 						$(document).ready(function () {
-
 							$('.autoplay').slick({
 								slidesToShow: 3,
 								slidesToScroll: 3,

@@ -14,7 +14,7 @@
 			<link rel="stylesheet" href="resources/style/grid.css">
 
 			<!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
 			<style>
 				.modal {
@@ -168,7 +168,7 @@
 							<button id="openSearchButton">검색창 열기</button>
 						</div>
 						<div class="search_box" id="search_box">
-							<form action="SearchAction" method="get" enctype="multipart/form-data">
+							<form action="Search" method="get" enctype="multipart/form-data">
 								<fieldset>
 									<legend>검색 폼</legend>
 									<input type="text" class="search_input" name="searchItem" id="searchItem"
@@ -200,7 +200,7 @@
 								const searchItem = document.getElementById("searchItem").value;
 
 								// 검색어를 서버로 전송하고 search.jsp로 이동
-								window.location.href = "SearchAction?product_name=" + encodeURIComponent(searchItem);
+								window.location.href = "Search?product_name=" + encodeURIComponent(searchItem);
 							});
 
 
@@ -239,7 +239,6 @@
 					</div>
 				</div>
 			</header>
-			<script src="resources/script/header.js"></script>
 		</body>
 
 		</html>
