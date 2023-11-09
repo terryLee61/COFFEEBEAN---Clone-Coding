@@ -43,7 +43,7 @@ public class SearchDao {
 	                int product_idx = this.rs.getInt(1);
 	                String full_product_name = this.rs.getString(2); // 전체 제품 이름 가져오기
 	                int product_price = this.rs.getInt(3);
-	                byte[] product_image = this.rs.getBytes(4);
+	                String product_image = this.rs.getString(4);
 
 	                Search search = new Search(product_idx, full_product_name, product_price, product_image);
 	                searchResults.add(search);

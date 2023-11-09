@@ -1,0 +1,15 @@
+.product_list ul li{
+    width: 240px;
+}
+
+.product_list ul li a .photo>img{
+    width: 240px;
+}
+
+.product_list ul li .txt_box .name{
+    display: block;
+}
+
+.product_list ul li .txt_box .product_price{
+    display: block;
+}

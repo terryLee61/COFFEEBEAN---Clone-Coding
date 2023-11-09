@@ -1,6 +1,7 @@
 package controller.Search;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -53,11 +54,9 @@ public class SearchAction extends HttpServlet {
 	        searchObj.put("product_idx", result.getProduct_idx());
 	        searchObj.put("product_name", result.getProduct_name());
 	        searchObj.put("product_price", result.getProduct_price());
-	        // 다른 필드도 필요에 따라 추가
+	        searchObj.put("product_image", result.getProduct_image());
 	        
 	        searchArray.put(searchObj);
-	        
-	        System.out.println("product_name: " + product_name);
 	        
 	    }
 
