@@ -1,9 +1,19 @@
+.product_list{
+    overflow: hidden;
+}
+
+.product_list ul{
+    text-align: center;
+}
+
 .product_list ul li{
     width: 240px;
+    float: left;
 }
 
 .product_list ul li a .photo>img{
-    width: 240px;
+    width: 230px;
+    height: 274px;
 }
 
 .product_list ul li .txt_box .name{

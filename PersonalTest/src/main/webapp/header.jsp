@@ -14,7 +14,7 @@
 			<link rel="stylesheet" href="resources/style/grid.css">
 
 			<!-- jquery -->
-    <!-- <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+			<!-- <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
 			<style>
 				.modal {
@@ -136,30 +136,223 @@
 						</h1>
 						<div id="gnb" class="gnb">
 							<ul>
-								<li>
-									<a href="online">
-										BUY ONLINE
-									</a>
+								<li class="buy">
+									<a href="online">BUY ONLINE</a>
+									<!-- depth 시작 -->
+									<div class="depth2">
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트12</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트13</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트143</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트123</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- depth 끝 -->
 								</li>
 								<li>
 									<a href="members">
 										MEMBER'S CLUB
 									</a>
+									<!-- depth 시작 -->
+									<div class="depth2">
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트12</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트13</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트143</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트123</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- depth 끝 -->
 								</li>
 								<li>
 									<a href="menu">
 										MENU
 									</a>
+									<!-- depth 시작 -->
+									<div class="depth2">
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트12</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트13</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트143</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트123</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- depth 끝 -->
 								</li>
 								<li>
 									<a href="service">
 										STORE & 서비스
 									</a>
+									<!-- depth 시작 -->
+									<div class="depth2">
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트12</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트13</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트143</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트123</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- depth 끝 -->
 								</li>
 								<li>
 									<a href="about">
 										THE COFFEE BEAN
 									</a>
+									<!-- depth 시작 -->
+									<div class="depth2">
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트12</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트13</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트143</a>
+												</li>
+											</ul>
+										</div>
+
+										<div class="depth2_list">
+											<h2 class="depth_title">테스트1</h2>
+											<ul>
+												<li>
+													<a href="#">테스트123</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- depth 끝 -->
 								</li>
 							</ul>
 						</div>
