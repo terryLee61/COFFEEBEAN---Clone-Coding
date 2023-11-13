@@ -229,6 +229,16 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     width: 75%;
     margin-left: 99px;
 }
+/* 
+.gnb > ul > li{
+    float: left;
+    padding: 0 31px 0 32px;
+} */
+
+#gnb>ul{
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .gnb > ul > li > a {
     display: block;
@@ -240,10 +250,35 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     letter-spacing: 0.025em; /* 자간 */
 }
 
-#gnb ul{
-    display: flex;
-    justify-content: space-evenly;
+.gnb>ul>li>a{
+    display: block;
+    font-family: Arial, 'NanumBarunGothic';
+    font-weight: 700;
+    font-size: 14px;
+    color: rgb(47,28,17);
+    line-height: 100px;
+    letter-spacing: 0.025em;
 }
+
+/* #menu_li{
+    width: 65px;
+} */
+
+#gnb .depth2 {
+    width: 120px;
+    padding: 40px 40px 35px;
+    margin-left: -42px;
+    position: absolute;
+    z-index: 99999;
+    background: rgb(238,238,238);
+    display: none;
+}
+
+#gnb>ul>li:hover .depth2 {
+    display: block;
+}
+
+
 
 /* js - toggle을 이용하여, 클래스가 정의되어 있지 않은 body나 header에 클래스를 더한다 */
 

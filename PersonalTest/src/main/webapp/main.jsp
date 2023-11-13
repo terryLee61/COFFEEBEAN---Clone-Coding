@@ -211,7 +211,7 @@
 					</script>
 				</div>
 				<div class="insta_area">
-					<h2>#커피빈코리아</h2>
+					<h2>#커피빈카피</h2>
 					<ul>
 						<li><a href="#"><img src="resources/img/coffee.jpg" alt=""></a></li>
 						<li><a href="#"><img src="resources/img/coffee2.jpg" alt=""></a></li>
