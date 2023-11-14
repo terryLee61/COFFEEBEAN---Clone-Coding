@@ -10,7 +10,7 @@
 			<title>Insert title here</title>
 
 			<!-- 초기화 css -->
-			<link rel="stylesheet" href="resources/style/reset.css">
+			<link rel="stylesheet" href="resources/style/reset_form.css">
 
 			<!-- 기본 css -->
 			<link rel="stylesheet" href="resources/style/grid.css">
@@ -437,8 +437,7 @@
 					</div>
 				</div>
 			</header>
-			<!-- header_form only -->
-			<script src="resources/script/header.js"></script>
+			
 		</body>
 
 		</html>

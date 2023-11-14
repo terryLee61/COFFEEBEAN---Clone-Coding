@@ -404,9 +404,20 @@
 							const openSearchButton = document.getElementById("openSearchButton");
 							const btnSearch = document.getElementById("btnSearch");
 							const searchBox = document.getElementById("search_box");
+							const btnHeaderMember = document.getElementById("btnHeaderMember");
+							const headerMember = document.querySelector('.header_member');
 
 							// 버튼 상태를 추적하는 변수
 							let isButtonActive = true;
+
+							btnHeaderMember.addEventListener("click", function () {
+								// btnSearch가 active일 때 버튼 상태를 변경하고 검색창을 닫습니다.
+								if (btnSearch.classList.contains("active")) {
+									btnSearch.classList.remove("active");
+									searchBox.style.display = "none";
+									isButtonActive = true; // isButtonActive 상태를 다시 true로 설정합니다.
+								}
+							});
 
 							// 버튼을 클릭할 때 이벤트 리스너를 추가합니다.
 							openSearchButton.addEventListener("click", function () {
@@ -417,13 +428,11 @@
 									// 검색 박스를 보이도록 합니다.
 									// 배경 이미지를 변경합니다.
 									searchBox.style.display = "block";
-									// btnSearch.style.backgroundImage = "url(webapp/resources/img/logo_search.png)";
 								} else {
 									// 버튼의 클래스를 제거하여 비활성 상태를 나타냅니다.
 									btnSearch.classList.remove("active");
 									// 검색 박스를 숨깁니다.
 									searchBox.style.display = "none";
-									// btnSearch.style.backgroundImage = "url(webapp/resources/img/ico_search_close.png)";
 								}
 
 								// 현재 상태를 반대로 업데이트합니다.
@@ -447,10 +456,10 @@
 							// 		headerMember.classList.add("is_close_member");
 							// 	}
 
-								// else {
-								// 	headerMember.style.display = "block";
-								// 	headerMember.style.height = "100px"; // 또는 원하는 높이로 설정하세요.
-								// }
+							// else {
+							// 	headerMember.style.display = "block";
+							// 	headerMember.style.height = "100px"; // 또는 원하는 높이로 설정하세요.
+							// }
 							// });
 
 

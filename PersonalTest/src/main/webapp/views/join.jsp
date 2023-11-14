@@ -20,7 +20,8 @@
         <!-- 회원가입 폼 -->
         <div class="form_wrap">
             <form action="Join" method="post" id="form">
-            	<h1>회원가입</h1>
+                <fieldset>
+            	<legend>회원가입</legend>
             
                 <!-- 아이디 -->
                 <span>아이디: </span>
@@ -39,6 +40,7 @@
                 <input type="text" name="email" id="email">
                 
                 <input type="submit" value="가입">
+            </fieldset>
             </form>
         </div>
     </section>
