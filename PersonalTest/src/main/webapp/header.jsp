@@ -13,6 +13,9 @@
 			<!-- 기본 css -->
 			<link rel="stylesheet" href="resources/style/grid.css">
 
+			<!-- 헤더 토글 js -->
+			<script src="resources/script/header.js"></script>
+
 			<!-- jquery -->
 			<!-- <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
@@ -425,7 +428,32 @@
 
 								// 현재 상태를 반대로 업데이트합니다.
 								isButtonActive = !isButtonActive;
+
 							});
+							// btnSearch.addEventListener("click", function () {
+							// 	const header = document.querySelector("header");
+							// 	const headerMember = document.querySelector(".header_member");
+							// 	if (btnSearch.classList.contains("active")) {
+							// 		headerMember.style.display = "none";
+							// 		headerMember.style.height = "0";
+							// 		header.classList.remove("is_open_member");
+							// 		header.classList.add("is_close_member");
+							// 		headerMemberLink.style.backgroundImage = 'url("resources/img/user_info.png")';
+							// 		isOpen = false;
+							// 		headerMember.style.display = 'none';
+							// 		headerMember.style.height = '0';
+
+							// 		headerMember.classList.remove("is_open_member");
+							// 		headerMember.classList.add("is_close_member");
+							// 	}
+
+								// else {
+								// 	headerMember.style.display = "block";
+								// 	headerMember.style.height = "100px"; // 또는 원하는 높이로 설정하세요.
+								// }
+							// });
+
+
 						</script>
 
 						<!-- top_menu 끝 -->

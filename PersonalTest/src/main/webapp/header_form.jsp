@@ -15,7 +15,11 @@
 			<!-- 기본 css -->
 			<link rel="stylesheet" href="resources/style/grid.css">
 
+			<!-- form 전용 css -->
 			<link rel="stylesheet" href="resources/style/form.css">
+
+			<!-- 헤더 토글 js -->
+			<script src="resources/script/header.js"></script>
 
 			<style>
 				.modal {

@@ -286,12 +286,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     display: block;
     height: 120px;
     animation: openMember 0.3s ease-in-out;
-}
-
-.is_close_member .header_member{
-    display: none;
-    height: 10px;
-    animation: closeMember 3s linear;
+    animation: closeMember 0.3s ease-in-out;
 }
 
 .util_menu{
