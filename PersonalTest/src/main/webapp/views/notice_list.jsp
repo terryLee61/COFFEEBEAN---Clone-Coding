@@ -16,14 +16,24 @@
             <section id="wrap">
                 <div class="main_contents">
                     공지사항 게시판 입니다.
-                    <div id="noticeContainer">
-
-                    </div>
+                    <table id="noticeTable" style="border: 1px solid black;">
+                        <thead>
+                            <tr>
+                                <th>제목</th>
+                                <th>내용</th>
+                                <th>작성자</th>
+                                <th>작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody id="noticeBody">
+                            <!-- 여기에 공지사항 목록이 들어갈 것입니다 -->
+                        </tbody>
+                    </table>
                     <div class="writing">
                         <a href="notice_write">글쓰기</a>
                     </div>
                 </div>
-                 <script>
+                <script>
                     // JavaScript 코드
                     window.onload = function () {
                         loadNotices();
@@ -42,22 +52,32 @@
                     }
 
                     function displayNotices(notices) {
-                        var noticeContainer = document.getElementById("noticeContainer");
-                        var html = '';
+                        var noticeBody = document.getElementById("noticeBody");
 
                         notices.forEach(function (notice) {
-                            html += '<div class="notice">';
-                            html += '<h2>' + notice.title + '</h2>';
-                            html += '<p>' + notice.contents + '</p>';
-                            html += '<p>작성자: ' + notice.author + '</p>';
-                            html += '<p>작성일: ' + notice.reg_date + '</p>';
-                            html += '</div>';
+                            var row = document.createElement("tr");
+
+                            var titleCell = document.createElement("td");
+                            titleCell.textContent = notice.title;
+                            row.appendChild(titleCell);
+
+                            var contentsCell = document.createElement("td");
+                            contentsCell.textContent = notice.contents;
+                            row.appendChild(contentsCell);
+
+                            var authorCell = document.createElement("td");
+                            authorCell.textContent = notice.author;
+                            row.appendChild(authorCell);
+
+                            var regDateCell = document.createElement("td");
+                            regDateCell.textContent = notice.reg_date;
+                            row.appendChild(regDateCell);
+
+                            noticeBody.appendChild(row);
                         });
-
-                        noticeContainer.innerHTML = html;
                     }
+                </script>
 
-                </script> 
             </section>
 
             <!-- footer 시작 -->
