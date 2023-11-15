@@ -36,6 +36,7 @@
                                 </fieldset>
                                 <button type="submit">글쓰기</button>
                             </form>
+                                <a href="notice_list"><button>목록</button></a>
                             <!-- <script>
                                 document.getElementById('write').addEventListener('submit', function (event) {
                                     event.preventDefault(); // 폼 기본 동작 방지

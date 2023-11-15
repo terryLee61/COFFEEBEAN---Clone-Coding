@@ -12,6 +12,7 @@ import java.util.List;
 
 import model.Notice.Notice;
 import model.Notice.NoticeDao;
+import model.Search.Search;
 import util.DBManager;
 
 public class NoticeDao {
@@ -20,6 +21,7 @@ public class NoticeDao {
 	private ResultSet rs;
 
 	private SimpleDateFormat sdf = new SimpleDateFormat("YYYYMMdd");
+	private int notice_idx;
 
 	public NoticeDao() {
         this.conn = DBManager.getConnection();
@@ -90,4 +92,35 @@ public class NoticeDao {
 	    return NoticeResults;
 	}
 
-}
+	public Notice getNoticeByIdx(int noticeIdx) {
+	    Notice notice = null;
+	    this.conn = DBManager.getConnection();
+
+	    if (this.conn != null) {
+	        String sql = "SELECT * FROM notice WHERE notice_idx = ?";
+	        try {
+	            this.pstmt = this.conn.prepareStatement(sql);
+	            this.pstmt.setInt(1, noticeIdx);
+	            this.rs = this.pstmt.executeQuery();
+
+	            if (this.rs.next()) {
+	                int notice_idx = this.rs.getInt(1);
+	                String title = this.rs.getString(2);
+	                String author = this.rs.getString(3);
+	                String contents = this.rs.getString(4);
+	                Timestamp reg_date = this.rs.getTimestamp(5);
+
+	                notice = new Notice(notice_idx, title, author, contents, reg_date);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        } finally {
+	            DBManager.close(this.conn, this.pstmt, this.rs);
+	        }
+	    }
+
+	    return notice;
+	    }
+    }
+	
+

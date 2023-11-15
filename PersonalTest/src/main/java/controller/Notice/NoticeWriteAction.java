@@ -59,11 +59,13 @@ public class NoticeWriteAction extends HttpServlet {
 	        // 결과를 클라이언트에 전송
 	        response.setContentType("text/html;charset=UTF-8");
 	        PrintWriter out = response.getWriter();
+	     // 성공 시 클라이언트에게 스크립트를 보내어 팝업 및 리다이렉션 수행
 	        if (success) {
-	            out.println("<h2>공지사항 추가 성공</h2>");
+	            out.println("<script>alert('공지사항 추가 성공'); window.location.href='notice_list';</script>");
 	        } else {
-	            out.println("<h2>공지사항 추가 실패</h2>");
+	            out.println("<script>alert('공지사항 추가 실패');</script>");
 	        }
+
 	        out.close();
 	    }
 }

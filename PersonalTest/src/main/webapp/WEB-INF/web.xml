@@ -107,6 +107,17 @@
 		<url-pattern>/NoticeDelete</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 공지_상세 -->
+	<servlet>
+		<servlet-name>NoticeDetail</servlet-name>
+		<servlet-class>controller.Notice.NoticeDetailAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NoticeDetail</servlet-name>
+		<url-pattern>/NoticeDetail</url-pattern>
+	</servlet-mapping>
+	
 	<!-- servlet-name은 위 아래 동일해야한다. -->
 
 	<!-- 2. JSP 페이지 맵핑 -->
@@ -274,6 +285,17 @@
 	<servlet-mapping>
 		<servlet-name>notice_write</servlet-name>
 		<url-pattern>/notice_write</url-pattern>
+	</servlet-mapping>
+	
+	<!-- notice(공지사항 상세) -->
+	<servlet>
+		<servlet-name>notice_detail</servlet-name>
+		<jsp-file>/views/notice_detail.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>notice_detail</servlet-name>
+		<url-pattern>/notice_detail</url-pattern>
 	</servlet-mapping>
 
 	<!-- 닫지 않으면 오류 발생 -->
