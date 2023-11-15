@@ -232,7 +232,7 @@
 									<!-- depth 시작 -->
 									<div class="depth2">
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트12</a>
@@ -241,7 +241,7 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트13</a>
@@ -250,7 +250,7 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트143</a>
@@ -259,7 +259,7 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트123</a>
@@ -276,7 +276,7 @@
 									<!-- depth 시작 -->
 									<div class="depth2">
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트12</a>
@@ -285,7 +285,7 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트13</a>
@@ -294,7 +294,7 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트143</a>
@@ -303,7 +303,7 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트123</a>
@@ -320,16 +320,16 @@
 									<!-- depth 시작 -->
 									<div class="depth2">
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">커피빈 소식</a></h2>
 											<ul>
 												<li>
-													<a href="#">테스트12</a>
+													<a href="notice_list">공지사항</a>
 												</li>
 											</ul>
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트13</a>
@@ -338,7 +338,7 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트143</a>
@@ -347,7 +347,7 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title">테스트1</h2>
+											<h2 class="depth_title"><a href="">테스트1</a></h2>
 											<ul>
 												<li>
 													<a href="#">테스트123</a>

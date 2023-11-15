@@ -62,6 +62,50 @@
 		<servlet-name>Search</servlet-name>
 		<url-pattern>/Search</url-pattern>
 	</servlet-mapping>
+
+	<!-- 공지_글쓰기 -->
+	<servlet>
+		<servlet-name>NoticeWrite</servlet-name>
+		<servlet-class>controller.Notice.NoticeWriteAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NoticeWrite</servlet-name>
+		<url-pattern>/NoticeWrite</url-pattern>
+	</servlet-mapping>
+
+	<!-- 공지_리스트 -->
+	<servlet>
+		<servlet-name>NoticeList</servlet-name>
+		<servlet-class>controller.Notice.NoticeListAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NoticeList</servlet-name>
+		<url-pattern>/NoticeList</url-pattern>
+	</servlet-mapping>
+
+	<!-- 공지_수정 -->
+	<servlet>
+		<servlet-name>NoticeUpdate</servlet-name>
+		<servlet-class>controller.Notice.NoticeUpdateAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NoticeUpdate</servlet-name>
+		<url-pattern>/NoticeUpdate</url-pattern>
+	</servlet-mapping>
+
+	<!-- 공지_삭제 -->
+	<servlet>
+		<servlet-name>NoticeDelete</servlet-name>
+		<servlet-class>controller.Notice.NoticeDeleteAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NoticeDelete</servlet-name>
+		<url-pattern>/NoticeDelete</url-pattern>
+	</servlet-mapping>
 	
 	<!-- servlet-name은 위 아래 동일해야한다. -->
 
@@ -208,6 +252,28 @@
 	<servlet-mapping>
 		<servlet-name>search</servlet-name>
 		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
+	
+	<!-- notice(공지사항) -->
+	<servlet>
+		<servlet-name>notice_list</servlet-name>
+		<jsp-file>/views/notice_list.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>notice_list</servlet-name>
+		<url-pattern>/notice_list</url-pattern>
+	</servlet-mapping>
+
+	<!-- notice(공지사항) -->
+	<servlet>
+		<servlet-name>notice_write</servlet-name>
+		<jsp-file>/views/notice_write.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>notice_write</servlet-name>
+		<url-pattern>/notice_write</url-pattern>
 	</servlet-mapping>
 
 	<!-- 닫지 않으면 오류 발생 -->
