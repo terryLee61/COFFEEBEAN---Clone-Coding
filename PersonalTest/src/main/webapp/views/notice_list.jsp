@@ -1,3 +1,7 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Statement"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
     <html>
@@ -15,30 +19,63 @@
             <!-- header 끝 -->
 
             <section id="wrap">
-                <div class="main_wrap">
+               <div class="main_wrap">
                     <div class="main_contents">
                         공지사항 게시판 입니다.
-                        <table id="noticeTable" style="border: 1px solid black;">
-                            <thead>
+                        <div id="noticeList">
+                            <h2>Notice List</h2>
+                            <table border="1">
                                 <tr>
                                     <th>번호</th>
                                     <th>제목</th>
-                                    <!-- <th>내용</th> -->
-                                    <th>작성자</th>
-                                    <th>작성일</th>
+                                    <th>글쓴이</th>
+                                    <th>날짜</th>
                                 </tr>
-                            </thead>
-                            <tbody id="noticeBody">
-                                <!-- 여기에 공지사항 목록이 들어갈 것입니다 -->
-                            </tbody>
-                        </table>
+                                <%
+                                // 데이터베이스 연결 정보
+                                String url = "jdbc:mysql://localhost:3306/personal";
+                                String username = "root";
+                                String password = "my1234";
+                        
+                                // 데이터베이스 연결 및 쿼리 실행
+                                try {
+                                    Class.forName("com.mysql.jdbc.Driver");
+                                    Connection conn = DriverManager.getConnection(url, username, password);
+
+                                    String sql = "SELECT * FROM notice";
+                                    Statement stmt = conn.createStatement();
+
+                                    ResultSet rs = stmt.executeQuery(sql);
+
+                                    while (rs.next()) {
+                                        out.println("<tr>");
+                                        out.println("<td>" + rs.getInt("notice_idx") + "</td>");
+
+                                        // 제목을 클릭하여 상세 페이지로 이동하는 링크 추가
+                                        out.println("<td><a href='notice_detail?id=" + rs.getInt("notice_idx") + "'>" + rs.getString("title") + "</a></td>");
+
+                                        out.println("<td>" + rs.getString("author") + "</td>");
+                                        out.println("<td>" + rs.getString("reg_date") + "</td>");
+                                        out.println("</tr>");
+                                    }
+
+                                    // 리소스 정리
+                                    rs.close();
+                                    stmt.close();
+                                    conn.close();
+                                } catch (Exception e) {
+                                    out.println("Exception: " + e.getMessage());
+                                    e.printStackTrace();
+                                }
+                                %>
+                            </table>
                         <div class="writing">
                             <a href="notice_write">글쓰기</a>
                         </div>
                     </div>
                     <!-- 게시글 상세 이동 js 코드 -->
                     <script>
-                        // JavaScript 코드
+                       /*  // JavaScript 코드
                         window.onload = function () {
                             loadNotices();
                         };
@@ -82,7 +119,7 @@
                     
                                 noticeBody.appendChild(row);
                             });
-                        }
+                        } */
                     </script>
                     <!-- <script>
                         // JavaScript 코드
