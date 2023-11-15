@@ -21,9 +21,8 @@
             <section id="wrap">
                <div class="main_wrap">
                     <div class="main_contents">
-                        공지사항 게시판 입니다.
                         <div id="noticeList">
-                            <h2>Notice List</h2>
+                            <h2>공지사항</h2>
                             <table border="1">
                                 <tr>
                                     <th>번호</th>
@@ -74,8 +73,8 @@
                         </div>
                     </div>
                     <!-- 게시글 상세 이동 js 코드 -->
-                    <script>
-                       /*  // JavaScript 코드
+                    <!-- <script>
+                         // JavaScript 코드
                         window.onload = function () {
                             loadNotices();
                         };
@@ -119,8 +118,8 @@
                     
                                 noticeBody.appendChild(row);
                             });
-                        } */
-                    </script>
+                        } 
+                    </script>  -->
                     <!-- <script>
                         // JavaScript 코드
                         window.onload = function () {

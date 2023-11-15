@@ -44,14 +44,20 @@ try {
     ResultSet rs = pstmt.executeQuery();
 
     if (rs.next()) {
-        out.println("Notice ID: " + rs.getInt("notice_idx") + "<br>");
-        out.println("Title: " + rs.getString("title") + "<br>");
-        out.println("Author: " + rs.getString("author") + "<br>");
-        out.println("Contents: " + rs.getString("contents") + "<br>");
-        out.println("Date: " + rs.getString("reg_date") + "<br>");
-    } else {
-        out.println("해당하는 공지사항이 없습니다.");
-    }
+        %>
+                <div>
+                    번호: <%= rs.getInt("notice_idx") %><br>
+                    제목: <%= rs.getString("title") %><br>
+                    글쓴이: <%= rs.getString("author") %><br>
+                    내용: <%= rs.getString("contents") %><br>
+                    날짜: <%= rs.getString("reg_date") %><br>
+                </div>
+        <%  } else { %>
+                <div>
+                    해당하는 공지사항이 없습니다.
+                </div>
+        <%  }
+
 
     // 리소스 정리
     rs.close();
