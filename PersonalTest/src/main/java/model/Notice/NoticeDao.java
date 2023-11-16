@@ -97,14 +97,16 @@ public class NoticeDao {
 	}
 	
 	 // 공지사항 정보 수정 메서드
-	public boolean updateNotice(String title, String contents, int noticeIdx) {
+	// 공지사항 정보 수정 메서드 (제목, 내용, 번호, 날짜)
+	public boolean updateNotice(String title, String contents, int noticeIdx, Timestamp regDate) {
 	    boolean updated = false;
-	    String sql = "UPDATE notice SET title = ?, contents = ? WHERE notice_idx = ?";
+	    String sql = "UPDATE notice SET title = ?, contents = ?, reg_date = ? WHERE notice_idx = ?";
 	    
 	    try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 	        pstmt.setString(1, title);
 	        pstmt.setString(2, contents);
-	        pstmt.setInt(3, noticeIdx);
+	        pstmt.setTimestamp(3, regDate);
+	        pstmt.setInt(4, noticeIdx);
 
 	        int rowsAffected = pstmt.executeUpdate();
 	        updated = rowsAffected > 0;
@@ -114,6 +116,7 @@ public class NoticeDao {
 	    
 	    return updated;
 	}
+
 
 
 
