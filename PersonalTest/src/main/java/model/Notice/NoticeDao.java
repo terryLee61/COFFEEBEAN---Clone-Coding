@@ -133,6 +133,7 @@ public class NoticeDao {
 	}
 
 
+}
 
 
 //	public Notice getNoticeByIdx(int noticeIdx) {
@@ -164,6 +165,5 @@ public class NoticeDao {
 //
 //	    return notice;
 //	    }
-    }
 	
 

@@ -65,6 +65,8 @@ public class NoticeUpdateAction extends HttpServlet {
 	        System.out.println("contents: " + contents);
 	    } else {
 	        out.println("<script>alert('공지사항 수정 실패');</script>");
+	        System.out.println("title: " + title);
+	        System.out.println("contents: " + contents);
 	    }
 
 	    out.close();
