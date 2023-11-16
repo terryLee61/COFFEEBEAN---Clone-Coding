@@ -26,8 +26,8 @@
 <%
 // 데이터베이스 연결 정보
 String url = "jdbc:mysql://localhost:3306/personal";
-		String username = "root";
-		String password = "my1234";
+String username = "root";
+String password = "my1234";
 
 // notice_idx 값 가져오기
 String notice_id = request.getParameter("id");
