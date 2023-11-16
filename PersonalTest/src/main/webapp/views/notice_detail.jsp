@@ -52,6 +52,7 @@ try {
                     내용: <%= rs.getString("contents") %><br>
                     최종 수정날짜: <%= rs.getString("reg_date") %><br>
                     <a href="notice_update?id=<%= rs.getInt("notice_idx")    %>"><button>수정</button></a>
+                    <a href="NoticeDelete?id=<%= rs.getInt("notice_idx") %>"><button>삭제</button></a>
                 </div>
         <%  } else { %>
                 <div>

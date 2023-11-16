@@ -117,6 +117,20 @@ public class NoticeDao {
 	    return updated;
 	}
 
+	public boolean deleteNotice(int noticeIdx) {
+	    boolean deleted = false;
+	    String sql = "DELETE FROM notice WHERE notice_idx = ?";
+	    
+	    try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	        pstmt.setInt(1, noticeIdx);
+	        int rowsAffected = pstmt.executeUpdate();
+	        deleted = rowsAffected > 0;
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return deleted;
+	}
 
 
 
