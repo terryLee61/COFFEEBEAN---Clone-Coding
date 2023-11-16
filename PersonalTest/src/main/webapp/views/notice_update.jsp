@@ -47,7 +47,7 @@ try {
         %>
         <div class="detail_con">
             <form method="post" action="NoticeUpdate">
-                번호: <%= rs.getInt("notice_idx") %><br>
+                <p class="idx_p">번호: <input type="text" name="notice_idx" value="<%= rs.getInt("notice_idx") %>" readonly ></p>
                 제목: <input type="text" name="title" value="<%= rs.getString("title") %>"><br>
                 글쓴이: <%= rs.getString("author") %><br>
                 내용: <input type="text" name="contents" value="<%= rs.getString("contents") %>"></input><br>

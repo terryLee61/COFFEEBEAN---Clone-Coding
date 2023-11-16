@@ -28,6 +28,10 @@ public class NoticeDao {
 
 	}
 
+	public NoticeDao(Connection conn2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	private static NoticeDao instance = new NoticeDao();
 
 	public static NoticeDao getInstance() {
@@ -91,6 +95,28 @@ public class NoticeDao {
 
 	    return NoticeResults;
 	}
+	
+	 // 공지사항 정보 수정 메서드
+	public boolean updateNotice(String title, String contents, int noticeIdx) {
+	    boolean updated = false;
+	    String sql = "UPDATE notice SET title = ?, contents = ? WHERE notice_idx = ?";
+	    
+	    try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	        pstmt.setString(1, title);
+	        pstmt.setString(2, contents);
+	        pstmt.setInt(3, noticeIdx);
+
+	        int rowsAffected = pstmt.executeUpdate();
+	        updated = rowsAffected > 0;
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return updated;
+	}
+
+
+
 
 //	public Notice getNoticeByIdx(int noticeIdx) {
 //	    Notice notice = null;

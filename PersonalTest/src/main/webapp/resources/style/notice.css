@@ -13,3 +13,7 @@
 .detail_con{
     border: 1px solid black;
 }
+
+.idx_p{
+    display: none;
+}
