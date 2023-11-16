@@ -39,11 +39,11 @@ public class NoticeDeleteAction extends HttpServlet {
 
         // 삭제가 성공하면 다시 공지사항 목록 페이지로 리다이렉션
         if (success) {
-            response.sendRedirect("notice_list");
+            // 삭제 성공 시, 응답으로 'deleted' 값을 전달
+            response.getWriter().write("deleted");
         } else {
-            // 실패 시 에러 처리 또는 다른 처리 방법을 선택할 수 있음
-            // 예를 들어, 에러 페이지로 리다이렉션 또는 다시 삭제 페이지로 리다이렉션 등
-            response.sendRedirect("error_page");
+            // 삭제 실패 시, 응답으로 'failed' 값을 전달
+            response.getWriter().write("failed");
         }
     }
 

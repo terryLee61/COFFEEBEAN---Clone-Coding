@@ -52,7 +52,7 @@ try {
                     내용: <%= rs.getString("contents") %><br>
                     최종 수정날짜: <%= rs.getString("reg_date") %><br>
                     <a href="notice_update?id=<%= rs.getInt("notice_idx")    %>"><button>수정</button></a>
-                    <a href="NoticeDelete?id=<%= rs.getInt("notice_idx") %>"><button>삭제</button></a>
+                    <a href="javascript:void(0);" onclick="confirmDelete(<%= rs.getInt("notice_idx") %>)"><button>삭제</button></a>
                 </div>
         <%  } else { %>
                 <div>
@@ -73,6 +73,29 @@ try {
 </div>
                     </div>
                 </div>
+                <script >
+                   function confirmDelete(noticeId) {
+        if (confirm('정말로 삭제하시겠습니까?')) {
+            // Ajax 요청을 통해 삭제를 수행하고 응답을 확인
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'NoticeDelete?id=' + noticeId);
+            xhr.send();
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.responseText === 'deleted') {
+                        alert('삭제 되었습니다.');
+                        // 삭제가 성공한 경우, 공지사항 목록 페이지로 리다이렉션
+                        window.location.href = 'notice_list';
+                    } else {
+                        // 삭제 실패 시, 에러 메시지를 표시하거나 다른 처리 방법 선택
+                        alert('삭제에 실패했습니다.');
+                    }
+                }
+            };
+        }
+    }
+                </script>
                 <!-- <script>
                     window.onload = function () {
                         loadNotices();
