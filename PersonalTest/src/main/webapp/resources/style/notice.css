@@ -9,3 +9,7 @@
 #noticeList{
     width: 1000px;
 }
+
+.detail_con{
+    border: 1px solid black;
+}

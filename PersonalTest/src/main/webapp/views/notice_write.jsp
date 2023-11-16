@@ -19,7 +19,7 @@
             <section id="wrap">
                 <div class="contents_wrap">
                     <div class="main_contents">
-                        공지사항 게시판 입니다.
+                        글쓰기 입니다.
                         <!-- 임시 글쓰기 창 -->
                         <div class="writing">
                             <form action="NoticeWrite" id="write" method="POST">

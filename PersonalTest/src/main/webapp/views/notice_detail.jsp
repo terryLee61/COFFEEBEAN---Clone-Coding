@@ -45,12 +45,13 @@ try {
 
     if (rs.next()) {
         %>
-                <div>
+                <div class="detail_con">
                     번호: <%= rs.getInt("notice_idx") %><br>
                     제목: <%= rs.getString("title") %><br>
                     글쓴이: <%= rs.getString("author") %><br>
                     내용: <%= rs.getString("contents") %><br>
                     날짜: <%= rs.getString("reg_date") %><br>
+                    <a href="notice_update?id=<%= rs.getInt("notice_idx")    %>"><button>수정</button></a>
                 </div>
         <%  } else { %>
                 <div>
@@ -68,7 +69,7 @@ try {
     e.printStackTrace();
 }
 %>
-                        </div>
+</div>
                     </div>
                 </div>
                 <!-- <script>

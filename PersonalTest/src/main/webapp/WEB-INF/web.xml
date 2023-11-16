@@ -298,5 +298,16 @@
 		<url-pattern>/notice_detail</url-pattern>
 	</servlet-mapping>
 
+	<!-- notice(공지사항 수정) -->
+	<servlet>
+		<servlet-name>notice_update</servlet-name>
+		<jsp-file>/views/notice_update.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>notice_update</servlet-name>
+		<url-pattern>/notice_update</url-pattern>
+	</servlet-mapping>
+
 	<!-- 닫지 않으면 오류 발생 -->
 </web-app>
