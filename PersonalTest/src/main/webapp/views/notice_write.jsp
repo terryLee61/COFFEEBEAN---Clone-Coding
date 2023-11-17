@@ -1,4 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@page import="javax.servlet.http.HttpSession"%>
+<%  // 세션이 null이거나 세션에 로그인 정보가 없을 경우
+    if (session == null || session.getAttribute("log") == null) { %>
+        <script>
+            alert('로그인이 필요합니다.');
+            window.location.href = 'login'; // 로그인 페이지로 이동
+        </script>
+<%  } %>
+
     <!DOCTYPE html>
     <html>
 
@@ -20,6 +29,7 @@
                 <div class="contents_wrap">
                     <div class="main_contents">
                         글쓰기 입니다.
+                        
                         <!-- 임시 글쓰기 창 -->
                         <div class="writing">
                             <form action="NoticeWrite" id="write" method="POST">
@@ -28,8 +38,9 @@
                                     <label for="title">제목: </label>
                                     <input type="text" id="title" class="title" name="title">
 
+                                    <!-- 로그인 정보 불러오기 -->
                                     <label for="author">글쓴이: </label>
-                                    <input type="text" id="author" class="author" name="author">
+                                    <input type="text" id="author" class="author" name="author" value="${sessionScope.log}" readonly>
 
                                     <label for="con">내용: </label>
                                     <input type="text" id="con" class="con" style="height: 50px;" name="contents">

@@ -3,6 +3,7 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Statement"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
     <html>
@@ -130,11 +131,16 @@
                                     <a href="?page=<%= currentPage + 1 %>">다음</a>
                                 <% } %>
                         <div class="writing">
-                            <a href="notice_write">글쓰기</a>
+                            <a href="notice_write"><button>글쓰기</button></a>
                         </div>
                     </div>
                 </div>
             </section>
+                <script>
+                    function loginAlert(){
+                        alert('로그인 후 이용해 주세요.');
+                    }
+                </script>
                     <!-- 게시글 상세 이동 js 코드 -->
                     <!-- <script>
                          // JavaScript 코드
