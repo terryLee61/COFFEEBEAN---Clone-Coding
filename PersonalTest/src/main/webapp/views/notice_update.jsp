@@ -26,8 +26,13 @@ try {
         
         if (sessionUserId == null || !sessionUserId.equals(author)) {
             // 작성자가 아닌 경우, 혹은 로그인하지 않은 경우
-            response.sendRedirect("notice_list");
-        } else {
+        	%>
+        	 <script>
+            alert('작성자만 수정이 가능합니다.');
+            window.location.href = 'notice_list'; // 로그인 페이지로 이동
+        </script>
+        	<% 
+        }else {
             // 작성자인 경우, 수정 가능한 폼 표시
 %>
 <!DOCTYPE html>
