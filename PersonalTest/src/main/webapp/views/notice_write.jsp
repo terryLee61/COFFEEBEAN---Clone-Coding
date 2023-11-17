@@ -40,7 +40,8 @@
 
                                     <!-- 로그인 정보 불러오기 -->
                                     <label for="author">글쓴이: </label>
-                                    <input type="text" id="author" class="author" name="author" value="${sessionScope.log}" readonly>
+                                    <span>${sessionScope.log}</span>
+                                    <input type="hidden" id="author" class="author" name="author" value="${sessionScope.log}" readonly></br>
 
                                     <label for="con">내용: </label>
                                     <input type="text" id="con" class="con" style="height: 50px;" name="contents">
