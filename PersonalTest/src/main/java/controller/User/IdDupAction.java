@@ -50,6 +50,8 @@ public class IdDupAction extends HttpServlet {
 		    response.setCharacterEncoding("UTF-8");
 		    PrintWriter out = response.getWriter();
 
+		    System.out.println("id: " + id);
+		    
 		    // JSON 형식으로 응답 데이터 전송
 		    out.print("{\"isDuplicate\": " + isIdDuplicate + "}");
 		    out.flush();

@@ -128,6 +128,17 @@
 		<servlet-name>IdDup</servlet-name>
 		<url-pattern>/IdDup</url-pattern>
 	</servlet-mapping>
+
+	<!-- 이메일_중복체크 -->
+	<servlet>
+		<servlet-name>EmailDup</servlet-name>
+		<servlet-class>controller.User.EmailDupAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EmailDup</servlet-name>
+		<url-pattern>/EmailDup</url-pattern>
+	</servlet-mapping>
 	
 	<!-- servlet-name은 위 아래 동일해야한다. -->
 

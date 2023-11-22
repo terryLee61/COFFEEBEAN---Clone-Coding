@@ -136,6 +136,8 @@ public class NoticeDao {
 }
 
 
+
+
 //	public Notice getNoticeByIdx(int noticeIdx) {
 //	    Notice notice = null;
 //	    this.conn = DBManager.getConnection();

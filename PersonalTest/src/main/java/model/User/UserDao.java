@@ -138,6 +138,30 @@ public class UserDao {
 	    
 	    return isDuplicate;
 	}
+
+	public boolean isEmailDuplicate(String email) {
+		boolean isDuplicate = false;
+		this.conn = DBManager.getConnection();
+		
+		if (this.conn != null) {
+	        String sql = "SELECT email FROM member WHERE email=?";
+			
+	        try {
+	            this.pstmt = this.conn.prepareStatement(sql);
+	            this.pstmt.setString(1, email);
+	            this.rs = this.pstmt.executeQuery();
+	            if (this.rs.next()) {
+	                isDuplicate = true;
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        } finally {
+	            DBManager.close(this.conn, this.pstmt, this.rs);
+	        }
+	    }
+	    
+	    return isDuplicate;
+	}
 	
 }
 

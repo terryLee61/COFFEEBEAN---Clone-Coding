@@ -40,9 +40,11 @@
                                     if (xhr.readyState === 4 && xhr.status === 200) {
                                         var response = JSON.parse(xhr.responseText);
                                         if (response.isDuplicate) {
-                                            console.log("ID is duplicate");
+                                            alert("이미 존재하는 아이디 입니다.")
+                                        } else if(memberId == ""){
+                                            alert("아이디를 입력하세요.")
                                         } else {
-                                            console.log("ID is not duplicate");
+                                            alert("사용할 수 있는 아이디 입니다.")
                                         }
                                     }
                                 };
@@ -61,11 +63,40 @@
 
                             <!-- 이메일 -->
                             <span>이메일: </span>
-                            <input type="email" name="email" id="email" placeholder="abc@efgh.com">
+                            <input type="text" name="email" id="email" placeholder="abc@efgh.com">
 
                             <!-- 중복체크 -->
-                            <button onclick="checkEmailDuplicate()" name="emailDupChk" id="emailDupChk">중복체크</button>
-
+                            <button type="button" onclick="checkEmailDuplicate()" name="emailDupChk" id="emailDupChk">중복체크</button>
+                            <script>
+                                function checkEmailDuplicate() {
+                                    var memberEmail = document.getElementById("email").value;
+                            
+                                    // HTML5에서 제공하는 이메일 유효성 검사
+                                    if (document.getElementById("email").validity.valid) {
+                                        var xhr = new XMLHttpRequest();
+                                        xhr.open("POST", "EmailDup", true);
+                                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                        xhr.onreadystatechange = function () {
+                                            if (xhr.readyState === 4 && xhr.status === 200) {
+                                                var response = JSON.parse(xhr.responseText);
+                                                if (response.isDuplicate) {
+                                                    alert("이미 존재하는 이메일 입니다.")
+                                                    console.log("email:" + memberEmail);
+                                                } else if(memberEmail == ""){
+                                                    alert("이메일을 입력하세요")
+                                                }else {
+                                                    console.log("email:" + memberEmail);
+                                                    alert("사용할 수 있는 이메일 입니다.")
+                                                }
+                                            }
+                                        };
+                                        xhr.send("email=" + encodeURIComponent(memberEmail));
+                                    } else {
+                                        alert("유효하지 않은 이메일 형식입니다.");
+                                    }
+                                }
+                            </script>
+                            
                             <!-- 이메일 인증 -->
                             <button onclick="sendEmailAuth()" name="emailAuthSend" id="emailAuthSend">인증메일 보내기</button>
 
