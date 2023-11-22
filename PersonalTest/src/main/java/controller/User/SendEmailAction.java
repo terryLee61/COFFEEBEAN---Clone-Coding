@@ -68,17 +68,17 @@ public class SendEmailAction extends HttpServlet {
 		});
 
 		try {
+		 // 난수 생성
+		    Random random = new Random();
+		    int actualCode  = 100000 + random.nextInt(900000); // 100000부터 999999까지의 난수 생성
+
+		    // 이메일 내용에 인증번호 삽입
+		    String emailContent = "인증 번호: " + actualCode; // 여기에 인증 번호를 넣어주세요
 		    // 메시지 생성
 		    Message message = new MimeMessage(mailSession);
 		    message.setFrom(new InternetAddress(username));
 		    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
 		    message.setSubject("이메일 인증");
-		 // 난수 생성
-		    Random random = new Random();
-		    int randomNumber = 100000 + random.nextInt(900000); // 100000부터 999999까지의 난수 생성
-
-		    // 이메일 내용에 인증번호 삽입
-		    String emailContent = "인증 번호: " + randomNumber; // 여기에 인증 번호를 넣어주세요
 		    message.setText(emailContent);
 		    // 이메일 전송
 		    Transport.send(message);

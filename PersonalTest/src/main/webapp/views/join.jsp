@@ -125,7 +125,27 @@
                             <input type="text" name="email_num" id="email_num">
                             <button type="button" onclick="checkEmailAuth()" name="emailAuthChk" id="emailAuthChk">인증</button>
 
+<script>
+function checkEmailAuth() {
+	   var enteredCode = document.getElementById("email_num").value; // 사용자가 입력한 인증번호
 
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("POST", "ChkEmail", true);
+	    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	    xhr.onreadystatechange = function() {
+	        if (xhr.readyState === 4 && xhr.status === 200) {
+	            var response = JSON.parse(xhr.responseText);
+	            if (response.isValid) {
+	                alert("인증되었습니다.");
+	                // 인증 성공 시 수행할 작업을 여기에 추가하세요
+	            } else {
+	                alert("인증번호가 일치하지 않습니다.");
+	            }
+	        }
+	    };
+	    xhr.send("email_num=" + encodeURIComponent(enteredCode));
+}
+</script>
                             <!-- 가입버튼 -->
                             <input type="submit" value="가입">
                         </fieldset>

@@ -150,6 +150,17 @@
 		<servlet-name>SendEmail</servlet-name>
 		<url-pattern>/SendEmail</url-pattern>
 	</servlet-mapping>
+
+	<!-- 이메일_인증입력-->
+	<servlet>
+		<servlet-name>ChkEmail</servlet-name>
+		<servlet-class>controller.User.ChkEmailAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ChkEmail</servlet-name>
+		<url-pattern>/ChkEmail</url-pattern>
+	</servlet-mapping>
 	
 	<!-- servlet-name은 위 아래 동일해야한다. -->
 
