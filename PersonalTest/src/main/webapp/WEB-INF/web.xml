@@ -118,6 +118,17 @@
 		<url-pattern>/NoticeDetail</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 아이디_중복체크 -->
+	<servlet>
+		<servlet-name>IdDup</servlet-name>
+		<servlet-class>controller.User.IdDupAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IdDup</servlet-name>
+		<url-pattern>/IdDup</url-pattern>
+	</servlet-mapping>
+	
 	<!-- servlet-name은 위 아래 동일해야한다. -->
 
 	<!-- 2. JSP 페이지 맵핑 -->

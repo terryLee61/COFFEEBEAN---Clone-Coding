@@ -22,6 +22,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // js를 동작 시켰을 때, margin-top 변경
+    var section = document.querySelector('section');
+
+    // 함수를 만들어서 header 클래스가 is_open_member인지 확인하고, 그에 따라 section의 margin-top을 조절합니다.
+    function adjustSectionMargin() {
+        if (header.classList.contains('is_open_member')) {
+            section.style.marginTop = '240px'; // 여기에 원하는 값으로 margin-top을 설정하세요.
+        } else {
+            section.style.marginTop = '140px'; // header 클래스가 is_open_member가 아닐 때는 margin-top을 초기화합니다.
+        }
+    }
+
+    // 페이지가 로드될 때와 헤더 클래스가 변경될 때마다 호출하여 section의 margin-top을 조절합니다.
+    adjustSectionMargin();
+
+    // 헤더 클래스가 변경될 때마다 section의 margin-top을 조절하는 함수를 호출합니다.
+    document.addEventListener('click', function () {
+        adjustSectionMargin();
+    });
 
     // 클릭한 링크 요소를 찾습니다.
     var headerMemberLink = document.getElementById('headerMemberLink');

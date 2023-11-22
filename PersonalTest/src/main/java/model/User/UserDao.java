@@ -24,9 +24,12 @@ public class UserDao {
 	}
 	
 	public boolean createUser(UserRequestDto dto) {
-		User dupl = getUserbyId(dto.getId());
-		if(dupl != null) 
-			return false;
+        // 아이디 중복 체크
+        boolean isIdDuplicate = isIdDuplicate(dto.getId());
+        if (isIdDuplicate) {
+            // 아이디가 중복되면 회원 가입 불가능
+            return false;
+        }
 		
 		String id = dto.getId();
 		String password = dto.getPassword();
@@ -111,7 +114,34 @@ public class UserDao {
 		
 		return user;
 	}
+
+	public boolean isIdDuplicate(String id) {
+		boolean isDuplicate = false;
+		this.conn = DBManager.getConnection();
+		
+		if (this.conn != null) {
+	        String sql = "SELECT id FROM member WHERE id=?";
+			
+	        try {
+	            this.pstmt = this.conn.prepareStatement(sql);
+	            this.pstmt.setString(1, id);
+	            this.rs = this.pstmt.executeQuery();
+	            if (this.rs.next()) {
+	                isDuplicate = true; // ID가 중복됨
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        } finally {
+	            DBManager.close(this.conn, this.pstmt, this.rs);
+	        }
+	    }
+	    
+	    return isDuplicate;
+	}
+	
 }
+
+
 	
 	
 //	public User getUserbyEmail(String email) {
