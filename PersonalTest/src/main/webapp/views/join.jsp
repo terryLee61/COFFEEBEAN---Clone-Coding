@@ -1,3 +1,4 @@
+<%@ page import="javax.mail.*,javax.mail.internet.*,java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -98,11 +99,31 @@
                             </script>
                             
                             <!-- 이메일 인증 -->
-                            <button onclick="sendEmailAuth()" name="emailAuthSend" id="emailAuthSend">인증메일 보내기</button>
+                            <button type="button" onclick="sendEmailAuth()" name="emailAuthSend" id="emailAuthSend">인증메일 보내기</button>
+							<script>
+							function sendEmailAuth() {
+							    var recipientEmail = document.getElementById("email").value; // 이메일 주소 가져오기
 
+							    var xhr = new XMLHttpRequest();
+							    xhr.open("POST", "SendEmail", true); // SendEmail은 이메일을 보내는 서블릿 URL입니다. 해당 URL을 실제로 사용하는 서블릿으로 변경해야 합니다.
+							    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+							    xhr.onreadystatechange = function () {
+							        if (xhr.readyState === 4) {
+							            if (xhr.status === 200) {
+							                alert("이메일을 성공적으로 보냈습니다.");
+							            } else {
+							                alert("이메일 보내기에 실패했습니다.");
+							            }
+							        }
+							    };
+							    xhr.send("recipientEmail=" + encodeURIComponent(recipientEmail));
+							}
+
+							</script>
+							
                             <!-- 인증번호 입력 -->
                             <input type="text" name="email_num" id="email_num">
-                            <button onclick="checkEmailAuth()" name="emailAuthChk" id="emailAuthChk">인증</button>
+                            <button type="button" onclick="checkEmailAuth()" name="emailAuthChk" id="emailAuthChk">인증</button>
 
 
                             <!-- 가입버튼 -->

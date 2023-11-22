@@ -139,6 +139,17 @@
 		<servlet-name>EmailDup</servlet-name>
 		<url-pattern>/EmailDup</url-pattern>
 	</servlet-mapping>
+
+	<!-- 이메일_인증-->
+	<servlet>
+		<servlet-name>SendEmail</servlet-name>
+		<servlet-class>controller.User.SendEmailAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SendEmail</servlet-name>
+		<url-pattern>/SendEmail</url-pattern>
+	</servlet-mapping>
 	
 	<!-- servlet-name은 위 아래 동일해야한다. -->
 
