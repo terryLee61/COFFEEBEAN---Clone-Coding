@@ -6,7 +6,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.io.PrintWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -72,6 +76,8 @@ public class SendEmailAction extends HttpServlet {
 		    Random random = new Random();
 		    int actualCode  = 100000 + random.nextInt(900000); // 100000부터 999999까지의 난수 생성
 
+	        String hashedCode = hashSHA256(String.valueOf(actualCode));
+
 		    // 이메일 내용에 인증번호 삽입
 		    String emailContent = "인증 번호: " + actualCode; // 여기에 인증 번호를 넣어주세요
 		    // 메시지 생성
@@ -83,9 +89,15 @@ public class SendEmailAction extends HttpServlet {
 		    // 이메일 전송
 		    Transport.send(message);
 
+//		    세션에 번호 전송 값을 저장
 		    request.getSession().setAttribute("actualCode", String.valueOf(actualCode));
 		    
+		     // 세션에 암호화된 인증 번호 저장
+	        HttpSession httpSession = request.getSession();
+	        httpSession.setAttribute("hashedCode", hashedCode);
+		    
 		    System.out.println("actualCode:" + actualCode);
+		    System.out.println("hashedCode:" + hashedCode);
 		    System.out.println("이메일 전송 완료");
 		    
 
@@ -94,4 +106,23 @@ public class SendEmailAction extends HttpServlet {
 		}
 			
 	}
+	 private static String hashSHA256(String originalString) {
+	        try {
+	            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+	            byte[] hash = digest.digest(originalString.getBytes());
+
+	            StringBuilder hexString = new StringBuilder();
+	            for (byte b : hash) {
+	                String hex = Integer.toHexString(0xff & b);
+	                if (hex.length() == 1) {
+	                    hexString.append('0');
+	                }
+	                hexString.append(hex);
+	            }
+	            return hexString.toString();
+	        } catch (NoSuchAlgorithmException e) {
+	            e.printStackTrace();
+	            return null;
+	        }
+	    }
 }
