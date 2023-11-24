@@ -181,7 +181,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
     }
 
 
-    // 주소를 합치고 값을 전달하는 함수
+    // 주소를 합치고 값을 전달하는 함수 (도로명주소 + 상세주소)
     function combineAddress() {
         var roadAddress = document.getElementById("roadAddress").value;
         var detailAddress = document.getElementById("detailAddress").value;

@@ -11,8 +11,9 @@ public class UserRequestDto {
 	private Timestamp join_date;
 	private String address;
 	private int postcode;
+	private String salt;	
 	
-	public UserRequestDto(int member_no, String id, String password, String name, String email, Timestamp join_date, String address, int postcode) {
+	public UserRequestDto(int member_no, String id, String password, String name, String email, Timestamp join_date, String address, int postcode, String salt) {
 		this.member_no = member_no;
 		this.id = id;
 		this.password = password;
@@ -21,6 +22,7 @@ public class UserRequestDto {
 		this.join_date = join_date;
 		this.address = address;
 		this.postcode = postcode;
+		this.salt = salt;
 	}
 	
 	public UserRequestDto(String id, String password, String name, String email) {
@@ -30,13 +32,14 @@ public class UserRequestDto {
 		this.email = email;
 	}
 	
-	public UserRequestDto(String id, String password, String name, String email, String address, int postcode) {
+	public UserRequestDto(String id, String password, String name, String email, String address, int postcode, String salt) {
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.email = email;
 		this.address = address;
 		this.postcode = postcode;
+		this.salt = salt;		
 	}
 
 	public int getMember_no() {
@@ -98,6 +101,13 @@ public class UserRequestDto {
 	}
 	public int setPostcode() {
 		return postcode;
+	}
+	
+	public String getSalt() {
+		return salt;
+	}
+	public String setSalt() {
+		return salt;
 	}
 	
 

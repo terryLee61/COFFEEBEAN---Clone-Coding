@@ -1,11 +1,16 @@
 package controller.User;
 
 import java.io.IOException;
+import java.security.SecureRandom;
+import java.util.Base64;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import model.SHA256;
 
 //import org.json.JSONArray;
 //import org.json.JSONObject;
@@ -40,48 +45,40 @@ public class LoginFormAction extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
-		String password = request.getParameter("password");
-//		파라미터 값을 받지 못해와서 모든 값이 null로 넘겨짐
-		HttpSession session = request.getSession();
-		UserDao userDao = UserDao.getInstance();
-		User user = userDao.getUserbyId(id);
-		
-//		String pwd = "";
-//		if(user != null) {
-//			pwd = user.getPassword();	
-//		}		
-		   
-		String url = "login";
-				
-//		if(user != null && password.equals(password)) {
-		if (user != null && user.getPassword().equals(password)) {
-			url = "main";		
-			
-			session.setAttribute("log", id);
-			session.setAttribute("password",user.getPassword());
-			session.setAttribute("member_no",user.getMember_no());
-			session.setAttribute("name", user.getName());
-			session.setAttribute("email", user.getEmail());
-			
-			System.out.println(session.getAttribute("log"));
-			System.out.println(session.getAttribute("password"));
-			System.out.println(session.getAttribute("member_no"));
-			System.out.println(session.getAttribute("name"));
-			System.out.println(session.getAttribute("email"));
-			
-			System.out.println("로그인에 성공했습니다.");
+		  String id = request.getParameter("id");
+		    String password = request.getParameter("password");
 
-		}else {
-	        // 로그인 실패 시에 대한 처리 (예: 에러 메시지 설정)
-			System.out.println(session.getAttribute("log"));
-			System.out.println(session.getAttribute("password"));
-			System.out.println(session.getAttribute("member_no"));
-			System.out.println(session.getAttribute("name"));
-			System.out.println(session.getAttribute("email"));
-			
-			System.out.println("로그인에 실패했습니다. 아이디 또는 비밀번호를 확인하세요.");
-	    }
-		response.sendRedirect(url);
-	}
+		    HttpSession session = request.getSession();
+		    UserDao userDao = UserDao.getInstance();
+		    User user = userDao.getUserbyId(id);
+
+		    String url = "login";
+		    if (user != null) {
+		        String salt = user.getSalt();
+
+		        String hashedPassword = SHA256.getSHA256(password + salt); // salt 값을 추가하여 해싱
+
+		        System.out.println("해시된 비밀번호: " + hashedPassword);
+		        System.out.println("DB에 저장된 해시된 비밀번호: " + user.getPassword());
+		        System.out.println("password: " + password);
+		        System.out.println("salt: " + salt);
+
+		        if (hashedPassword.equals(user.getPassword())) {
+		            url = "main";
+
+		            session.setAttribute("log", id);
+		            session.setAttribute("member_no", user.getMember_no());
+		            session.setAttribute("name", user.getName());
+		            session.setAttribute("email", user.getEmail());
+
+		            System.out.println("로그인에 성공했습니다.");
+		        } else {
+		            System.out.println("로그인에 실패했습니다. 아이디 또는 비밀번호를 확인하세요.");
+		        }
+		    } else {
+		        System.out.println("로그인에 실패했습니다. 아이디 또는 비밀번호를 확인하세요.");
+		    }
+
+		    response.sendRedirect(url);
+		}
 }
