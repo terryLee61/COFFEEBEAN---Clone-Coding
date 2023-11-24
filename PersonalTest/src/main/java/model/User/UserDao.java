@@ -35,6 +35,8 @@ public class UserDao {
 		String password = dto.getPassword();
 		String name = dto.getName();
 		String email = dto.getEmail();
+		String address = dto.getAddress();
+		int postcode = dto.getPostcode();
 		
 		boolean check = true;
 		
@@ -42,13 +44,15 @@ public class UserDao {
 			this.conn = DBManager.getConnection();
 			if(this.conn != null) {
 //				if(!address.equals("")) {
-					String sql = "INSERT INTO member (id,password,name,email) VALUES(?, ?, ?, ?)";
+					String sql = "INSERT INTO member (id,password,name,email, address, postcode) VALUES(?, ?, ?, ?, ?, ?)";
 					try {
 						this.pstmt = this.conn.prepareStatement(sql);
 						this.pstmt.setString(1, id);
 						this.pstmt.setString(2, password);
 						this.pstmt.setString(3, name);
 						this.pstmt.setString(4, email);
+						this.pstmt.setString(5, address);
+						this.pstmt.setInt(6, postcode);
 						
 						this.pstmt.execute();
 						
@@ -60,13 +64,15 @@ public class UserDao {
 				}
 //				}
 			else {
-				String sql = "INSERT INTO Member (id,password,name,email) VALUES(?, ?, ?, ?)";
+				String sql = "INSERT INTO member (id,password,name,email, address, postcode) VALUES(?, ?, ?, ?, ?, ?)";
 					try {
 						this.pstmt = this.conn.prepareStatement(sql);
 						this.pstmt.setString(1, id);
 						this.pstmt.setString(2, password);
 						this.pstmt.setString(3, name);
 						this.pstmt.setString(4, email);
+						this.pstmt.setString(5, address);
+						this.pstmt.setInt(6, postcode);
 						
 						this.pstmt.execute();
 						

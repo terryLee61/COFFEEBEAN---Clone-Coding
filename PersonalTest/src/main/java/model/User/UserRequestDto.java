@@ -9,14 +9,18 @@ public class UserRequestDto {
 	private String name;
 	private String email;
 	private Timestamp join_date;
+	private String address;
+	private int postcode;
 	
-	public UserRequestDto(int member_no, String id, String password, String name, String email, Timestamp join_date) {
+	public UserRequestDto(int member_no, String id, String password, String name, String email, Timestamp join_date, String address, int postcode) {
 		this.member_no = member_no;
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.email = email;
 		this.join_date = join_date;
+		this.address = address;
+		this.postcode = postcode;
 	}
 	
 	public UserRequestDto(String id, String password, String name, String email) {
@@ -24,6 +28,15 @@ public class UserRequestDto {
 		this.password = password;
 		this.name = name;
 		this.email = email;
+	}
+	
+	public UserRequestDto(String id, String password, String name, String email, String address, int postcode) {
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.postcode = postcode;
 	}
 
 	public int getMember_no() {
@@ -74,6 +87,18 @@ public class UserRequestDto {
 		this.join_date = join_date;
 	}
 	
+	public String getAddress() {
+		return address;
+	}
+	public String setAddress() {
+		return address;
+	}
+	public int getPostcode() {
+		return postcode;
+	}
+	public int setPostcode() {
+		return postcode;
+	}
 	
 
 //	public UserRequestDto(String ppassword, String tel, String email, String user_address, int emailCheck) {	

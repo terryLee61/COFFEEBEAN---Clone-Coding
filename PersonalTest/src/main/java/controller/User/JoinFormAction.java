@@ -49,13 +49,29 @@ public class JoinFormAction extends HttpServlet {
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");		
+		String address = request.getParameter("address");		
+		String postcodeStr = request.getParameter("postcode");
+
+		// postcode를 정수로 변환
+		int postcode = 0;
+		if (postcodeStr != null && !postcodeStr.isEmpty()) {
+			try {
+				postcode = Integer.parseInt(postcodeStr);
+			} catch (NumberFormatException e) {
+				// postcode가 숫자 형식이 아닌 경우에 대한 예외 처리
+				e.printStackTrace(); // 에러 로그 출력 또는 적절한 예외 처리
+			}
+		}
+				
 			
 		System.out.println("id : " + id);
 		System.out.println("password : " + password);
 		System.out.println("name : " + name);
 		System.out.println("email : " + email);
+		System.out.println("address : " + address);
+		System.out.println("postcode : " + postcode);
 
-		UserRequestDto user = new UserRequestDto(id, password, name, email);
+		UserRequestDto user = new UserRequestDto(id, password, name, email, address, postcode);
 
 		UserDao userDao = UserDao.getInstance();
 		boolean result = userDao.createUser(user);

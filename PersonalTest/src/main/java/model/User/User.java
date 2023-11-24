@@ -9,14 +9,18 @@ public class User {
 	private String name;
 	private String email;
 	private Timestamp join_date;
+	private String address;
+	private int postcode;	
 	
-	public User(int member_no, String id, String password, String name, String email, Timestamp join_date) {
+	public User(int member_no, String id, String password, String name, String email, Timestamp join_date, String address, int postcode) {
 		this.member_no = member_no;
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.email = email;
 		this.join_date = join_date;
+		this.address = address;
+		this.postcode = postcode;
 	}
 	
 	public User(int member_no, String id, String password, String name, String email) {
@@ -25,6 +29,16 @@ public class User {
 		this.password = password;
 		this.name = name;
 		this.email = email;
+	}
+
+	public User(int member_no, String id, String password, String name, String email, String address, int postcode) {
+		this.member_no = member_no;
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.postcode = postcode;
 	}
 	
 	
@@ -45,6 +59,12 @@ public class User {
 	}
 	public Timestamp getJoin_date() {
 		return join_date;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public int getPostcode() {
+		return postcode;
 	}
 
 	
