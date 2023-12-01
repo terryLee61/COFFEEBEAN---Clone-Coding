@@ -32,6 +32,11 @@
   
 ![image](https://github.com/terryLee61/cfbcopy/assets/128010347/2201188b-c353-4697-bc5c-2323f81ef070)
 
+### ❕ Slide 구현
+- Slick Slide를 사용하여, COFFEEBEAN 홈페이지 스타일에 맞게 슬라이드를 구현 하였습니다.
+  
+  https://github.com/terryLee61/cfbcopy/assets/128010347/ceb704cc-82e1-482b-9485-23f594829616
+
 
 ## ❗️ 이러한 것에 집중 했습니다.
 ### ❕개선점에 집중한 클론코딩
