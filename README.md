@@ -77,3 +77,69 @@ SHA-256만을 이용해서 비밀번호를 해싱하여 서버에 저장하는 �
 
 이런식으로 값이 조정 가능합니다. 하지만 테이블에 이미 조정하려는 값보다 높은 값이 존재할 경우, 쿼리문이 적용되지 않습니다.
 그래서 테이블에서 값을 삭제하여 조정하거나, 재설정하려는 값을 테이블에 존재하는 가장 큰 값보다 더 큰 값으로 조정하여 쿼리문을 만들어야 합니다.
+
+#### 📌 Top-Button Issue
+- 초기 Top 버튼이 클릭시 페이지 최상단으로 올라가다가 중간에 멈추는 현상이 발생 했었습니다.
+- 추측컨대, 페이지 로딩이 아마 다 끝나지 않은 상태에서 버튼을 누르면 JS가 정상 동작하지 않는 문제였던 것 같습니다.
+
+      window.addEventListener('scroll', function() {
+      const backTopButton = document.getElementById("backTop2");
+      if (window.pageYOffset > 200) {
+          backTopButton.style.opacity = "1";
+      } else {
+          backTopButton.style.opacity = "0";
+        }
+      });
+      // 버튼을 클릭하여 페이지 맨 위로 이동 (부드럽게 스크롤)
+      document.getElementById("backTop2").addEventListener('click', function(event) {
+        event.preventDefault(); // 디폴트 클릭 동작 (링크 이동) 막기
+  
+      if ('scrollBehavior' in document.documentElement.style) {
+          // "scroll-behavior"를 지원하는 경우
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      } else {
+          // "scroll-behavior"를 지원하지 않는 경우
+          const scrollToTop = function() {
+              if (window.scrollY !== 0) {
+                  window.scrollBy(0, -20);
+                  requestAnimationFrame(scrollToTop);
+              }
+          };
+          scrollToTop();
+        }
+      });
+
+- Scroll-Behavior를 쓰지 않는 코드로 변경하고 나서, 증상이 해결 되었습니다.
+      
+        document.getElementById("backTop2").addEventListener('click', function (event) {
+          event.preventDefault();
+          scrollToTop(1000); 
+      });
+      
+      function scrollToTop(duration) {
+          const start = window.pageYOffset;
+          const distance = -start; 
+          const startTime = performance.now();
+      
+          function animateScroll(currentTime) {
+              const elapsedTime = currentTime - startTime;
+              const ease = easeOutCubic(elapsedTime, start, distance, duration);
+              window.scrollTo(0, ease);
+      
+              if (elapsedTime < duration) {
+                  requestAnimationFrame(animateScroll);
+              }
+          }
+      
+          function easeOutCubic(t, b, c, d) {
+              t /= d;
+              t--;
+              return c * (t * t * t + 1) + b;
+          }
+      
+          requestAnimationFrame(animateScroll);
+      }
+
