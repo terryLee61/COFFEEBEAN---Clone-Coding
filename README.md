@@ -9,12 +9,28 @@
 23.10.09. 일자를 기준으로 하여 커피빈 페이지를 클론 코딩 하였습니다.
 
 ## 🔎 주요 기능 소개
-- 회원가입 및 로그인, 로그아웃 기능(CSS 수정중, 23.12.01. 기준)
+### ❕ 회원가입 및 로그인, 로그아웃 기능(CSS 수정중, 23.12.01. 기준)
+- 회원가입
+  
+![image](https://github.com/terryLee61/cfbcopy/assets/128010347/f7dc7048-be9e-45ce-92f0-c45bbe0b80d8)
+  - 회원가입시, 서버 테이블에 있는 아이디의 값을 조회하여 아이디 중복체크
+  - 이메일 인증
+  - 다음 주소 API를 이용하여 주소 찾기 및 입력
 
-- 검색 기능
+### ❕ 검색 기능
+  
   ![image](https://github.com/terryLee61/cfbcopy/assets/128010347/2942a046-1737-49f8-96be-0a796e8aef0d)
 
-- 게시판 글쓰기 및 수정, 삭제 기능(CSS 수정중, 23.12.01. 기준)
+### ❕ 게시판 글쓰기 및 수정, 삭제 기능(CSS 수정중, 23.12.01. 기준)
+- 글쓰기
+  
+![image](https://github.com/terryLee61/cfbcopy/assets/128010347/939ac160-af70-4059-8447-7d0db7213665)
+- 수정
+  
+![image](https://github.com/terryLee61/cfbcopy/assets/128010347/ecf0ec05-df5f-4488-8b64-fed90d9b2476)
+- 삭제
+  
+![image](https://github.com/terryLee61/cfbcopy/assets/128010347/2201188b-c353-4697-bc5c-2323f81ef070)
 
 
 ## ❗️ 이러한 것에 집중 했습니다.
