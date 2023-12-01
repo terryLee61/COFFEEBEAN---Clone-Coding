@@ -13,9 +13,6 @@
 			<!-- 기본 css -->
 			<link rel="stylesheet" href="resources/style/grid.css">
 
-			<!-- 헤더 토글 js -->
-			<script src="resources/script/header.js"></script>
-
 			<!-- jquery -->
 			<!-- <script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
@@ -424,12 +421,9 @@
 						</div>
 						<div class="search_box" id="search_box">
 							<form action="Search" method="get" enctype="multipart/form-data">
-								<fieldset>
-			
 									<input type="text" class="search_input" name="searchItem" id="searchItem"
 										placeholder="검색어를 입력하세요">
 									<button class="btn_search" id="searchButton">검색</button>
-								</fieldset>
 							</form>
 						</div>
 
@@ -443,91 +437,12 @@
 								</div>
 							</div>
 						</div>
-
-						<script>
-							const searchButton = document.getElementById("searchButton");
-
-							// 검색 버튼 클릭 시 서버로 검색어를 요청
-							searchButton.addEventListener("click", (event) => {
-								event.preventDefault(); // 폼 제출 방지
-
-								// 검색어 가져오기
-								const searchItem = document.getElementById("searchItem").value;
-
-								// 검색어를 서버로 전송하고 search.jsp로 이동
-								window.location.href = "Search?product_name=" + encodeURIComponent(searchItem);
-							});
-
-
-							// 버튼 요소와 검색 박스 요소를 가져옵니다.
-							const openSearchButton = document.getElementById("openSearchButton");
-							const btnSearch = document.getElementById("btnSearch");
-							const searchBox = document.getElementById("search_box");
-							const btnHeaderMember = document.getElementById("btnHeaderMember");
-							const headerMember = document.querySelector('.header_member');
-
-							// 버튼 상태를 추적하는 변수
-							let isButtonActive = true;
-
-							btnHeaderMember.addEventListener("click", function () {
-								// btnSearch가 active일 때 버튼 상태를 변경하고 검색창을 닫습니다.
-								if (btnSearch.classList.contains("active")) {
-									btnSearch.classList.remove("active");
-									searchBox.style.display = "none";
-									isButtonActive = true; // isButtonActive 상태를 다시 true로 설정합니다.
-								}
-							});
-
-							// 버튼을 클릭할 때 이벤트 리스너를 추가합니다.
-							openSearchButton.addEventListener("click", function () {
-								// isButtonActive 변수를 기반으로 현재 상태를 확인하고 업데이트합니다.
-								if (isButtonActive) {
-									// 버튼에 클래스를 추가하여 활성 상태를 나타냅니다.
-									btnSearch.classList.add("active");
-									// 검색 박스를 보이도록 합니다.
-									// 배경 이미지를 변경합니다.
-									searchBox.style.display = "block";
-								} else {
-									// 버튼의 클래스를 제거하여 비활성 상태를 나타냅니다.
-									btnSearch.classList.remove("active");
-									// 검색 박스를 숨깁니다.
-									searchBox.style.display = "none";
-								}
-
-								// 현재 상태를 반대로 업데이트합니다.
-								isButtonActive = !isButtonActive;
-
-							});
-							// btnSearch.addEventListener("click", function () {
-							// 	const header = document.querySelector("header");
-							// 	const headerMember = document.querySelector(".header_member");
-							// 	if (btnSearch.classList.contains("active")) {
-							// 		headerMember.style.display = "none";
-							// 		headerMember.style.height = "0";
-							// 		header.classList.remove("is_open_member");
-							// 		header.classList.add("is_close_member");
-							// 		headerMemberLink.style.backgroundImage = 'url("resources/img/user_info.png")';
-							// 		isOpen = false;
-							// 		headerMember.style.display = 'none';
-							// 		headerMember.style.height = '0';
-
-							// 		headerMember.classList.remove("is_open_member");
-							// 		headerMember.classList.add("is_close_member");
-							// 	}
-
-							// else {
-							// 	headerMember.style.display = "block";
-							// 	headerMember.style.height = "100px"; // 또는 원하는 높이로 설정하세요.
-							// }
-							// });
-
-
-						</script>
+		
 
 						<!-- top_menu 끝 -->
 					</div>
 				</div>
 			</header>
 		</body>
-
+<script src="resources/script/header.js"></script>
 		</html>

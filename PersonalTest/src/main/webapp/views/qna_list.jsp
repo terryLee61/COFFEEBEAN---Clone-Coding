@@ -136,12 +136,7 @@
                     </div>
                 </div>
             </section>
-                <script>
-                    function loginAlert(){
-                        alert('로그인 후 이용해 주세요.');
-                    }
-                </script>
-                   
+
 
             <!-- footer 시작 -->
             <jsp:include page="footer"></jsp:include>
@@ -149,5 +144,5 @@
 
         </div>
     </body>
-
+<script sre="resource/script/qna.js"></script>
     </html>
