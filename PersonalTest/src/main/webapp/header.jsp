@@ -49,6 +49,7 @@
 					cursor: pointer;
 				}
 			</style>
+			
 		</head>
 
 		<body>
@@ -144,7 +145,9 @@
 									<!-- depth 시작 -->
 									<div class="depth2">
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트12</a>
@@ -153,7 +156,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트13</a>
@@ -162,7 +167,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트143</a>
@@ -171,7 +178,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트123</a>
@@ -188,7 +197,9 @@
 									<!-- depth 시작 -->
 									<div class="depth2">
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트12</a>
@@ -197,7 +208,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트13</a>
@@ -206,7 +219,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트143</a>
@@ -215,7 +230,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트123</a>
@@ -232,7 +249,9 @@
 									<!-- depth 시작 -->
 									<div class="depth2">
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트12</a>
@@ -241,7 +260,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트13</a>
@@ -250,7 +271,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트143</a>
@@ -259,7 +282,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트123</a>
@@ -276,7 +301,9 @@
 									<!-- depth 시작 -->
 									<div class="depth2">
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트12</a>
@@ -285,7 +312,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트13</a>
@@ -294,7 +323,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트143</a>
@@ -303,7 +334,9 @@
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
 													<a href="#">테스트123</a>
@@ -320,37 +353,63 @@
 									<!-- depth 시작 -->
 									<div class="depth2">
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">커피빈 소식</a></h2>
+											<h2 class="depth_title">
+												<a href="#">커피빈 코리아</a>
+											</h2>
 											<ul>
 												<li>
-													<a href="notice_list">공지사항</a>
+													<a href="#">- Simply the Best</a>
+												</li>
+												<li>
+													<a href="#">- 커피빈 커피와 티</a>
 												</li>
 											</ul>
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">커피빈 소식</a>
+											</h2>
 											<ul>
 												<li>
-													<a href="#">테스트13</a>
+													<a href="#">- 새소식</a>
+												</li>
+												<li>
+													<a href="#">- 프로모션</a>
+												</li>
+												<li>
+													<a href="#">- 공지사항</a>
+												</li>
+												<li>
+													<a href="#">- 소셜미디어</a>
 												</li>
 											</ul>
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">사회공헌</a>
+											</h2>
 											<ul>
 												<li>
-													<a href="#">테스트143</a>
+													<a href="#">- 국제 사회공헌</a>
+												</li>
+												<li>
+													<a href="#">- 필리핀 청소년 교육혜택 지원하기</a>
+												</li>
+												<li>
+													<a href="#">- 성경원, 나눔의 샘 후원 결연</a>
 												</li>
 											</ul>
 										</div>
 
 										<div class="depth2_list">
-											<h2 class="depth_title"><a href="">테스트1</a></h2>
+											<h2 class="depth_title">
+												<a href="#">테스트1</a>
+											</h2>
 											<ul>
 												<li>
-													<a href="#">테스트123</a>
+													<a href="qna_list">문의사항</a>
 												</li>
 											</ul>
 										</div>
@@ -366,7 +425,7 @@
 						<div class="search_box" id="search_box">
 							<form action="Search" method="get" enctype="multipart/form-data">
 								<fieldset>
-									<legend>검색 폼</legend>
+			
 									<input type="text" class="search_input" name="searchItem" id="searchItem"
 										placeholder="검색어를 입력하세요">
 									<button class="btn_search" id="searchButton">검색</button>

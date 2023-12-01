@@ -75,10 +75,12 @@
 
                                 <!-- address 값을 저장할 input 요소 추가 -->
                                 <input type="hidden" name="address" id="address">
-                                
+
                                 <!-- 다음 주소 api -->
-                                <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-                            
+                                <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js" async></script>
+                                <!-- <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js" defer></script> -->
+
+
                                 <!-- 가입버튼 -->
                                 <input type="submit" value="가입">
                             </fieldset>

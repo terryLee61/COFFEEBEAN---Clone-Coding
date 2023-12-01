@@ -1,4 +1,4 @@
-package controller.Notice;
+package controller.Qna;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Notice.NoticeDao;
+import model.Qna.QnaDao;
 
 /**
- * Servlet implementation class NoticeDeleteAction
+ * Servlet implementation class QnaDeleteAction
  */
-//@WebServlet("/NoticeDeleteAction")
-public class NoticeDeleteAction extends HttpServlet {
+//@WebServlet("/QnaDeleteAction")
+public class QnaDeleteAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NoticeDeleteAction() {
+    public QnaDeleteAction() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,14 +28,14 @@ public class NoticeDeleteAction extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // notice_idx 값 가져오기
-    	   int noticeIdx = Integer.parseInt(request.getParameter("id"));
+        // Qna_idx 값 가져오기
+    	   int qnaIdx = Integer.parseInt(request.getParameter("id"));
 
-    	    // NoticeDao 객체 생성
-    	    NoticeDao noticeDao = NoticeDao.getInstance();
+    	    // QnaDao 객체 생성
+    	    QnaDao qnaDao = QnaDao.getInstance();
 
     	    // 공지사항 삭제를 위한 메서드 호출
-    	    boolean success = noticeDao.deleteNotice(noticeIdx);
+    	    boolean success = qnaDao.deleteQna(qnaIdx);
 
     	    // 삭제 성공 여부에 따라 적절한 처리
     	    if (success) {

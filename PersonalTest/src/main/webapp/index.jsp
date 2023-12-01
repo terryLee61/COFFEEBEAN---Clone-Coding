@@ -19,6 +19,7 @@
 			<a href="main" id="main_btn">
 				<h1>nEW sTART</h1>
 			</a>
+			<input type="checkbox" style="width: 10px; height: 10px;">안녕
 		</p>
 	</section>
 

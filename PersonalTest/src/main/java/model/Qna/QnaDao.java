@@ -1,4 +1,4 @@
-package model.Notice;
+package model.Qna;
 
 import java.sql.Timestamp;
 import java.sql.Connection;
@@ -10,40 +10,40 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Notice.Notice;
-import model.Notice.NoticeDao;
+import model.Qna.Qna;
+import model.Qna.QnaDao;
 import model.Search.Search;
 import util.DBManager;
 
-public class NoticeDao {
+public class QnaDao {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
 	private SimpleDateFormat sdf = new SimpleDateFormat("YYYYMMdd");
-	private int notice_idx;
+	private int qna_idx;
 
-	public NoticeDao() {
+	public QnaDao() {
         this.conn = DBManager.getConnection();
 
 	}
 
-	public NoticeDao(Connection conn2) {
+	public QnaDao(Connection conn2) {
 		// TODO Auto-generated constructor stub
 	}
 
-	private static NoticeDao instance = new NoticeDao();
+	private static QnaDao instance = new QnaDao();
 
-	public static NoticeDao getInstance() {
+	public static QnaDao getInstance() {
 		return instance;
 	}
 
-	public boolean addNotice(String title, String author, String contents, Timestamp reg_date) {
+	public boolean addQna(String title, String author, String contents, Timestamp reg_date) {
 		boolean isSuccess = false;
 		this.conn = DBManager.getConnection();
 
 		if (this.conn != null) {
-			String sql = "INSERT INTO notice (title, author, contents, reg_date) VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO qna (title, author, contents, reg_date) VALUES (?, ?, ?, ?)";
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
@@ -59,32 +59,32 @@ public class NoticeDao {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
-				DBManager.close(this.conn, this.pstmt);
+				DBManager.close(this.conn, this.pstmt, this.rs);
 			}
 		}
 
 		return isSuccess;
 	}
 
-	public List<Notice> getAllNotices() {
-	    List<Notice> NoticeResults = new ArrayList<>();
+	public List<Qna> getAllQnas() {
+	    List<Qna> QnaResults = new ArrayList<>();
 	    this.conn = DBManager.getConnection();
 
 	    if (this.conn != null) {
-	        String sql = "SELECT * FROM notice";
+	        String sql = "SELECT * FROM qna";
 	        try {
 	            this.pstmt = this.conn.prepareStatement(sql);
 	            this.rs = this.pstmt.executeQuery();
 	            
 	            while (this.rs.next()) {
-	                int notice_idx = this.rs.getInt("notice_idx");
+	                int qna_idx = this.rs.getInt("qna_idx");
 	                String title = this.rs.getString("title");
 	                String author = this.rs.getString("author");
 	                String contents = this.rs.getString("contents");
 	                Timestamp reg_date = this.rs.getTimestamp("reg_date");
 
-	                Notice notice = new Notice(notice_idx, title, author, contents, reg_date);
-	                NoticeResults.add(notice);
+	                Qna qna = new Qna(qna_idx, title, author, contents, reg_date);
+	                QnaResults.add(qna);
 	            }
 	        } catch (SQLException e) {
 	            e.printStackTrace();
@@ -93,20 +93,20 @@ public class NoticeDao {
 	        }
 	    }
 
-	    return NoticeResults;
+	    return QnaResults;
 	}
 	
 	 // 공지사항 정보 수정 메서드
 	// 공지사항 정보 수정 메서드 (제목, 내용, 번호, 날짜)
-	public boolean updateNotice(String title, String contents, int noticeIdx, Timestamp regDate) {
+	public boolean updateQna(String title, String contents, int qnaIdx, Timestamp regDate) {
 	    boolean updated = false;
-	    String sql = "UPDATE notice SET title = ?, contents = ?, reg_date = ? WHERE notice_idx = ?";
+	    String sql = "UPDATE qna SET title = ?, contents = ?, reg_date = ? WHERE qna_idx = ?";
 	    
 	    try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 	        pstmt.setString(1, title);
 	        pstmt.setString(2, contents);
 	        pstmt.setTimestamp(3, regDate);
-	        pstmt.setInt(4, noticeIdx);
+	        pstmt.setInt(4, qnaIdx);
 
 	        int rowsAffected = pstmt.executeUpdate();
 	        updated = rowsAffected > 0;
@@ -117,12 +117,12 @@ public class NoticeDao {
 	    return updated;
 	}
 
-	public boolean deleteNotice(int noticeIdx) {
+	public boolean deleteQna(int qnaIdx) {
 	    boolean deleted = false;
-	    String sql = "DELETE FROM notice WHERE notice_idx = ?";
+	    String sql = "DELETE FROM qna WHERE qna_idx = ?";
 	    
 	    try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-	        pstmt.setInt(1, noticeIdx);
+	        pstmt.setInt(1, qnaIdx);
 	        int rowsAffected = pstmt.executeUpdate();
 	        deleted = rowsAffected > 0;
 	    } catch (SQLException e) {
@@ -131,41 +131,7 @@ public class NoticeDao {
 	    
 	    return deleted;
 	}
-
-
 }
 
-
-
-
-//	public Notice getNoticeByIdx(int noticeIdx) {
-//	    Notice notice = null;
-//	    this.conn = DBManager.getConnection();
-//
-//	    if (this.conn != null) {
-//	        String sql = "SELECT * FROM notice WHERE notice_idx = ?";
-//	        try {
-//	            this.pstmt = this.conn.prepareStatement(sql);
-//	            this.pstmt.setInt(1, noticeIdx);
-//	            this.rs = this.pstmt.executeQuery();
-//
-//	            if (this.rs.next()) {
-//	                int notice_idx = this.rs.getInt(1);
-//	                String title = this.rs.getString(2);
-//	                String author = this.rs.getString(3);
-//	                String contents = this.rs.getString(4);
-//	                Timestamp reg_date = this.rs.getTimestamp(5);
-//
-//	                notice = new Notice(notice_idx, title, author, contents, reg_date);
-//	            }
-//	        } catch (Exception e) {
-//	            e.printStackTrace();
-//	        } finally {
-//	            DBManager.close(this.conn, this.pstmt, this.rs);
-//	        }
-//	    }
-//
-//	    return notice;
-//	    }
 	
 

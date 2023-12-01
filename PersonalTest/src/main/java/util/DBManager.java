@@ -5,7 +5,7 @@ import java.sql.*;
 public class DBManager {
 	public static Connection getConnection() {
 		Connection conn = null;
-		String url = "jdbc:mysql://localhost:3306/personal";
+		String url = "jdbc:mysql://localhost:3306/personal?autoReconnect=true";
 		String username = "root";
 		String password = "my1234";
 		

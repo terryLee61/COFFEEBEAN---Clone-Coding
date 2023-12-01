@@ -49,6 +49,7 @@
 					cursor: pointer;
 				}
 			</style>
+						
 		</head>
 
 		<body>
@@ -323,7 +324,7 @@
 											<h2 class="depth_title"><a href="">커피빈 소식</a></h2>
 											<ul>
 												<li>
-													<a href="notice_list">공지사항</a>
+													<a href="qna_list">문의사항</a>
 												</li>
 											</ul>
 										</div>

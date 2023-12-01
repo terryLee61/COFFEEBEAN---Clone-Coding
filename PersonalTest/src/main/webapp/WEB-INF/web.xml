@@ -65,57 +65,57 @@
 
 	<!-- 공지_글쓰기 -->
 	<servlet>
-		<servlet-name>NoticeWrite</servlet-name>
-		<servlet-class>controller.Notice.NoticeWriteAction</servlet-class>
+		<servlet-name>QnaWrite</servlet-name>
+		<servlet-class>controller.Qna.QnaWriteAction</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>NoticeWrite</servlet-name>
-		<url-pattern>/NoticeWrite</url-pattern>
+		<servlet-name>QnaWrite</servlet-name>
+		<url-pattern>/QnaWrite</url-pattern>
 	</servlet-mapping>
 
 	<!-- 공지_리스트 -->
 	<servlet>
-		<servlet-name>NoticeList</servlet-name>
-		<servlet-class>controller.Notice.NoticeListAction</servlet-class>
+		<servlet-name>QnaList</servlet-name>
+		<servlet-class>controller.Qna.QnaListAction</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>NoticeList</servlet-name>
-		<url-pattern>/NoticeList</url-pattern>
+		<servlet-name>QnaList</servlet-name>
+		<url-pattern>/QnaList</url-pattern>
 	</servlet-mapping>
 
 	<!-- 공지_수정 -->
 	<servlet>
-		<servlet-name>NoticeUpdate</servlet-name>
-		<servlet-class>controller.Notice.NoticeUpdateAction</servlet-class>
+		<servlet-name>QnaUpdate</servlet-name>
+		<servlet-class>controller.Qna.QnaUpdateAction</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>NoticeUpdate</servlet-name>
-		<url-pattern>/NoticeUpdate</url-pattern>
+		<servlet-name>QnaUpdate</servlet-name>
+		<url-pattern>/QnaUpdate</url-pattern>
 	</servlet-mapping>
 
 	<!-- 공지_삭제 -->
 	<servlet>
-		<servlet-name>NoticeDelete</servlet-name>
-		<servlet-class>controller.Notice.NoticeDeleteAction</servlet-class>
+		<servlet-name>qnaDelete</servlet-name>
+		<servlet-class>controller.Qna.QnaDeleteAction</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>NoticeDelete</servlet-name>
-		<url-pattern>/NoticeDelete</url-pattern>
+		<servlet-name>qnaDelete</servlet-name>
+		<url-pattern>/qnaDelete</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 공지_상세 -->
 	<servlet>
-		<servlet-name>NoticeDetail</servlet-name>
-		<servlet-class>controller.Notice.NoticeDetailAction</servlet-class>
+		<servlet-name>QnaDetail</servlet-name>
+		<servlet-class>controller.Qna.QnaDetailAction</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>NoticeDetail</servlet-name>
-		<url-pattern>/NoticeDetail</url-pattern>
+		<servlet-name>QnaDetail</servlet-name>
+		<url-pattern>/QnaDetail</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 아이디_중복체크 -->
@@ -309,48 +309,48 @@
 		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 	
-	<!-- notice(공지사항) -->
+	<!-- qna(공지사항) -->
 	<servlet>
-		<servlet-name>notice_list</servlet-name>
-		<jsp-file>/views/notice_list.jsp</jsp-file>
+		<servlet-name>qna_list</servlet-name>
+		<jsp-file>/views/qna_list.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>notice_list</servlet-name>
-		<url-pattern>/notice_list</url-pattern>
+		<servlet-name>qna_list</servlet-name>
+		<url-pattern>/qna_list</url-pattern>
 	</servlet-mapping>
 
-	<!-- notice(공지사항) -->
+	<!-- qna(공지사항) -->
 	<servlet>
-		<servlet-name>notice_write</servlet-name>
-		<jsp-file>/views/notice_write.jsp</jsp-file>
+		<servlet-name>qna_write</servlet-name>
+		<jsp-file>/views/qna_write.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>notice_write</servlet-name>
-		<url-pattern>/notice_write</url-pattern>
+		<servlet-name>qna_write</servlet-name>
+		<url-pattern>/qna_write</url-pattern>
 	</servlet-mapping>
 	
-	<!-- notice(공지사항 상세) -->
+	<!-- qna(공지사항 상세) -->
 	<servlet>
-		<servlet-name>notice_detail</servlet-name>
-		<jsp-file>/views/notice_detail.jsp</jsp-file>
+		<servlet-name>qna_detail</servlet-name>
+		<jsp-file>/views/qna_detail.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>notice_detail</servlet-name>
-		<url-pattern>/notice_detail</url-pattern>
+		<servlet-name>qna_detail</servlet-name>
+		<url-pattern>/qna_detail</url-pattern>
 	</servlet-mapping>
 
-	<!-- notice(공지사항 수정) -->
+	<!-- qna(공지사항 수정) -->
 	<servlet>
-		<servlet-name>notice_update</servlet-name>
-		<jsp-file>/views/notice_update.jsp</jsp-file>
+		<servlet-name>qna_update</servlet-name>
+		<jsp-file>/views/qna_update.jsp</jsp-file>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>notice_update</servlet-name>
-		<url-pattern>/notice_update</url-pattern>
+		<servlet-name>qna_update</servlet-name>
+		<url-pattern>/qna_update</url-pattern>
 	</servlet-mapping>
 
 	<!-- 닫지 않으면 오류 발생 -->

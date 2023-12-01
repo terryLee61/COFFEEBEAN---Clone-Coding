@@ -1,4 +1,4 @@
-package controller.Notice;
+package controller.Qna;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,20 +14,20 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import model.Notice.Notice;
-import model.Notice.NoticeDao;
+import model.Qna.Qna;
+import model.Qna.QnaDao;
 
 /**
- * Servlet implementation class NoticeListAction
+ * Servlet implementation class QnaListAction
  */
-// @WebServlet("/NoticeListAction")
-public class NoticeListAction extends HttpServlet {
+// @WebServlet("/QnaListAction")
+public class QnaListAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public NoticeListAction() {
+	public QnaListAction() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -38,20 +38,20 @@ public class NoticeListAction extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// NoticeDao를 사용하여 공지사항 목록을 가져옵니다.
+		// QnaDao를 사용하여 공지사항 목록을 가져옵니다.
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 
-		List<Notice> notices = NoticeDao.getInstance().getAllNotices(); // 모든 공지사항을 가져옵니다.
+		List<Qna> qnas = QnaDao.getInstance().getAllQnas(); // 모든 공지사항을 가져옵니다.
 
 		JSONArray jsonArray = new JSONArray();
-		for (Notice notice : notices) {
+		for (Qna qna : qnas) {
 			JSONObject jsonObject = new JSONObject();
-			jsonObject.put("notice_idx", notice.getNotice_idx());
-			jsonObject.put("title", notice.getTitle());
-			jsonObject.put("author", notice.getAuthor());
-			jsonObject.put("contents", notice.getContents());
-			jsonObject.put("reg_date", notice.getReg_date().toString());
+			jsonObject.put("qna_idx", qna.getQna_idx());
+			jsonObject.put("title", qna.getTitle());
+			jsonObject.put("author", qna.getAuthor());
+			jsonObject.put("contents", qna.getContents());
+			jsonObject.put("reg_date", qna.getReg_date().toString());
 			jsonArray.put(jsonObject);
 		}
 

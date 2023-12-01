@@ -1,0 +1,23 @@
+.contents_wrap{
+    padding: 55px 0;
+}
+
+.main_contents{
+    margin: 0 40%;
+}
+
+#qnaList{
+    width: 1000px;
+}
+
+.detail_con{
+    border: 1px solid black;
+}
+
+.idx_p{
+    display: none;
+}
+
+.author{
+    border: none;
+}

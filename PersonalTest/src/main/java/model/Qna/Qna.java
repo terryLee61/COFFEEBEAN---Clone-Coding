@@ -1,17 +1,17 @@
-package model.Notice;
+package model.Qna;
 
 import java.sql.Timestamp;
 
-public class Notice {
-	private int notice_idx;
+public class Qna {
+	private int qna_idx;
 	private String title;
 	private String author;
 	private String contents;
 	private Timestamp reg_date;
 
 	// 글쓰기
-	public Notice(int notice_idx, String title, String author, String contents, Timestamp reg_date){
-		this.notice_idx = notice_idx;
+	public Qna(int qna_idx, String title, String author, String contents, Timestamp reg_date){
+		this.qna_idx = qna_idx;
 		this.title = title;
 		this.author = author;
 		this.contents = contents;
@@ -19,19 +19,19 @@ public class Notice {
 	}
 	
 	// 수정
-	// public Notice(String title, String contents, Timestamp reg_date){
+	// public Qna(String title, String contents, Timestamp reg_date){
 	// 	this.title = title;
 	// 	this.contents = contents;
 	// 	this.reg_date = reg_date;
 	// }
 	
-	public Notice() {
+	public Qna() {
 		// TODO Auto-generated constructor stub
 	}
 
 	// 게터 
-	public int getNotice_idx() {
-		return notice_idx;
+	public int getQna_idx() {
+		return qna_idx;
 	}
 	
 	public String getTitle() {
@@ -55,8 +55,8 @@ public class Notice {
 		this.reg_date = reg_date;
 	}
 
-	public void setNotice_idx(int notice_idx) {
-		this.notice_idx = notice_idx;
+	public void setQna_idx(int qna_idx) {
+		this.qna_idx = qna_idx;
 	}
 
 	public void setContents(String contents) {

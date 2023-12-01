@@ -6,7 +6,7 @@
 
 		<head>
 			<meta charset="UTF-8">
-			<title>커피빈 카피</title>
+			<title>홈ㅣCOFFEE BEAN KOREA</title>
 			<!-- main css -->
 			<link rel="stylesheet" href="resources/style/main.css">
 
@@ -21,6 +21,9 @@
 			
 			<link rel="stylesheet" href="resources/style/slick.css" />
 			<link rel="stylesheet" href="resources/style/slick-theme.css" />
+			<!-- favicon -->
+			<link rel="shortcut icon" href="resources/img/favicon.png">
+			
 			
 		</head>
 
