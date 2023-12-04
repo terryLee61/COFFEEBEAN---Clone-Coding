@@ -5,9 +5,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
 String sessionUserId = (String) session.getAttribute("log");
-String url = "jdbc:mysql://localhost:3306/personal";
-String username = "root";
-String password = "my1234";
+String url = "";
+String username = "";
+String password = "";
 String qna_id = request.getParameter("id");
 
 try {
