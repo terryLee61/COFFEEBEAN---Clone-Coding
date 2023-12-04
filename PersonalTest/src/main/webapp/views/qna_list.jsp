@@ -34,9 +34,9 @@
                                 </tr>
                                 <%
                                 // 데이터베이스 연결 정보
-                                String url = "jdbc:mysql://localhost:3306/personal";
-                                String username = "root";
-                                String password = "my1234";
+                                String url = "";
+                                String username = "";
+                                String password = "";
                                 
                                 // 페이지당 보여줄 게시물 수
                                 int recordsPerPage = 5;
