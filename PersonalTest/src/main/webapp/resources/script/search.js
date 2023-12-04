@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    var searchJSON = '<%= request.getAttribute("searchJSON") %>';
-    var searchData = JSON.parse(searchJSON);
 
     if (searchData.length > 0) {
         // 검색 결과가 있는 경우
