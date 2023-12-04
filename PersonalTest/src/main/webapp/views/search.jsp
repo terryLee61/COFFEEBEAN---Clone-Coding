@@ -28,16 +28,19 @@
 								<div class="product_list">
 									검색 결과
 
-									<c:if test="${not empty search}">
+									<!-- <%-- <c:if test="${not empty search}">
 										<p>제품 이름: ${search[0].product_name}</p>
 										<p>제품 가격: ${search[0].product_price}</p>
 										
-									</c:if>
+										</c:if>
 										<c:if test="${empty search}">
 											<p>제품을 찾을 수 없습니다.</p>
-									</c:if>
+										</c:if> --%> -->
 								</div>
-										
+									<script>
+										var searchJSON = '<%= request.getAttribute("searchJSON") %>';
+									    var searchData = JSON.parse(searchJSON);
+									</script>
 							</div>
 						</section>
 						<!-- body 끝 -->
@@ -46,5 +49,5 @@
 						<jsp:include page="footer"></jsp:include>
 						<!-- footer 끝 -->
 					</body>
-
+					<script type="text/javascript" src="resources/script/search.js"></script>
 					</html>
