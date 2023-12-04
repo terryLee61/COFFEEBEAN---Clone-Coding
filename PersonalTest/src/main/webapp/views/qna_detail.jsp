@@ -28,9 +28,9 @@
 String qna_id = request.getParameter("id");
 
 try {
-    String url = "jdbc:mysql://localhost:3306/personal";
-    String username = "root";
-    String password = "my1234";
+    String url = "";
+    String username = "";
+    String password = "";
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = DriverManager.getConnection(url, username, password);
 
